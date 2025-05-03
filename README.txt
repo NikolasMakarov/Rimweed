@@ -1,12 +1,11 @@
-Crimson - WW2 Collection
-
-Copyright © 2024 Crimson Corps
+Crimson - Rimweed
+Copyright © 2025 Crimson Corps
 
 Copyright and Art Claim
 All textures and artistic elements in this mod are the exclusive intellectual property of Crimson Corps, protected under copyright law.
 
 Copyright Notice:
-© 2024 Crimson Corps
+© 2025 Crimson Corps
 
 Artwork by:
 Nikolas Makarov
