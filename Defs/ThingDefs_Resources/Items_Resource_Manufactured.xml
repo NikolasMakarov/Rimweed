@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>CC_Plastic_Pack</defName>
+    <label>Plastic pack</label>
+    <description>A pack made from plastic.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/CC_Plastic_Pack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <WorkToMake>20</WorkToMake>
+      <MarketValue>1</MarketValue>
+      <Mass>0.05</Mass>
+      <Flammability>2.0</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+      <bulkRecipeCount>20</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <Chemfuel>1</Chemfuel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>CC_Jar</defName>
+    <label>Jar</label>
+    <description>A plastic jar made from plastic.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/CC_Jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <WorkToMake>100</WorkToMake>
+      <MarketValue>4</MarketValue>
+      <Mass>0.05</Mass>
+      <Flammability>2.0</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+      <bulkRecipeCount>10</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <Chemfuel>2</Chemfuel>
+    </costList>
+  </ThingDef>
+
+</Defs>

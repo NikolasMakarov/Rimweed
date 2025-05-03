@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- ============================== Dried OG Kush ============================== -->
+
+  <ThingDef ParentName="CC_MakeableRawDrugBase">
+    <defName>CC_dried_OG_Kush</defName>
+    <label>Dried OG Kush</label>
+    <description>A legendary hybrid that brings deep relaxation, mild euphoria, and pain relief, perfect for unwinding after a hard day.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_OG_KushHigh</HediffDef>
+      <HediffDef>CC_dried_OG_KushTolerance</HediffDef>
+      <HediffDef>CC_dried_OG_KushAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_OG_kush</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>6</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.20</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_OG_KushHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_OG_Kush</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_OG_KushTolerance</hediffDef>
+          <toleranceChemical>CC_dried_OG_Kush</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CC_primitive_drying_rack</li>
+        <li>CC_industrial_drying_rack</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>100</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_OG_Kush>1</CC_OG_Kush>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_OG_Kush</chemical>
+        <addictiveness>0.10</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>110</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_MakeableDrugBase">
+    <defName>CC_dried_OG_Kush_Packed</defName>
+    <label>Dried OG Kush (Packed)</label>
+    <description>A legendary hybrid that brings deep relaxation, mild euphoria, and pain relief, perfect for unwinding after a hard day. It is packed and ready for sell!</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_OG_KushHigh</HediffDef>
+      <HediffDef>CC_dried_OG_KushTolerance</HediffDef>
+      <HediffDef>CC_dried_OG_KushAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_OG_kush_packed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>42</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.20</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_OG_KushHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_OG_Kush</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_OG_KushTolerance</hediffDef>
+          <toleranceChemical>CC_dried_OG_Kush</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>2406</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_dried_OG_Kush>1</CC_dried_OG_Kush>
+      <CC_Plastic_Pack>1</CC_Plastic_Pack>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_OG_Kush</chemical>
+        <addictiveness>0.10</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>110</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>CC_dried_OG_KushHigh</defName>
+    <label>high on dried OG kush</label>
+    <labelNoun>an OG kush high</labelNoun>
+    <description>Induces mild euphoria and anxiolysis through enhanced endocannabinoid signaling, reducing pain perception while slightly impairing cognitive processing.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painFactor>0.82</painFactor>
+          <statFactors>
+            <RestFallRateFactor>0.33</RestFallRateFactor>
+          </statFactors>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>CC_dried_OG_KushHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_OG_KushHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>feeling mellow</label>
+        <description>Everything feels so chill... I could sit here forever.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== OG Kush Addiction ============================== -->
+  
+  <ChemicalDef>
+    <defName>CC_dried_OG_Kush</defName>
+    <label>OG kush</label>
+    <addictionHediff>CC_dried_OG_KushAddiction</addictionHediff>
+    <toleranceHediff>CC_dried_OG_KushTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <onGeneratedAddictedEvents>
+      <li>
+        <hediff>ChemicalDamageSevere</hediff>
+        <chance>0.15</chance>
+        <partsToAffect>
+          <li>Lung</li>
+        </partsToAffect>
+      </li>
+    </onGeneratedAddictedEvents>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>CC_Chemical_dried_OG_kush</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>dried OG kush</label>
+    <description>Because of dried OG kush addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>50</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>CC_dried_OG_KushTolerance</defName>
+    <label>dried OG kush tolerance</label>
+    <description>A built-up tolerance to dried OG kush. The more severe this tolerance is, the more it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>CC_dried_OG_Kush</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 180)</li>
+            <li>(1, 135)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Lung</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>CC_dried_OG_KushAddiction</defName>
+    <label>dried OG kush addiction</label>
+    <description>A chemical addiction to dried OG kush. Long-term presence of dried OG kush has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of dried OG kush, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>CC_Chemical_dried_OG_kush</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+	  	<painFactor>1.1</painFactor>
+	  </li>
+      <li>
+        <label>withdrawal</label>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>CC_dried_OG_KushWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_OG_KushAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>craving dried OG Kush</label>
+        <description>I feel tense... I just need a little to take the edge off.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+<!-- ============================== Dried Granddaddy Purple ============================== -->
+
+  <ThingDef ParentName="CC_MakeableRawDrugBase">
+    <defName>CC_dried_Granddaddy_Purple</defName>
+    <label>Dried Granddaddy Purple</label>
+    <description>A powerful indica that soothes the body, promotes deep sleep, and increases appetite with its heavy, sedating effects.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Granddaddy_PurpleHigh</HediffDef>
+      <HediffDef>CC_dried_Granddaddy_PurpleTolerance</HediffDef>
+      <HediffDef>CC_dried_Granddaddy_PurpleAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Granddaddy_Purple</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>9</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.50</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Granddaddy_PurpleHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Granddaddy_Purple</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>-0.4</offset>
+          <toleranceChemical>CC_dried_Granddaddy_Purple</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Granddaddy_PurpleTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Granddaddy_Purple</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CC_primitive_drying_rack</li>
+        <li>CC_industrial_drying_rack</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>200</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_Granddaddy_Purple>1</CC_Granddaddy_Purple>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Granddaddy_Purple</chemical>
+        <addictiveness>0.18</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_MakeableDrugBase">
+    <defName>CC_dried_Granddaddy_Purple_Packed</defName>
+    <label>Dried Granddaddy Purple (Packed)</label>
+    <description>A powerful indica that soothes the body, promotes deep sleep, and increases appetite with its heavy, sedating effects. It is packed and ready for sell!</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Granddaddy_PurpleHigh</HediffDef>
+      <HediffDef>CC_dried_Granddaddy_PurpleTolerance</HediffDef>
+      <HediffDef>CC_dried_Granddaddy_PurpleAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Granddaddy_Purple_packed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>70</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.50</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Granddaddy_PurpleHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Granddaddy_Purple</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>-0.4</offset>
+          <toleranceChemical>CC_dried_Granddaddy_Purple</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Granddaddy_PurpleTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Granddaddy_Purple</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>2407</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_dried_Granddaddy_Purple>1</CC_dried_Granddaddy_Purple>
+      <CC_Plastic_Pack>1</CC_Plastic_Pack>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Granddaddy_Purple</chemical>
+        <addictiveness>0.18</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>CC_dried_Granddaddy_PurpleHigh</defName>
+    <label>high on dried granddaddy purple</label>
+    <labelNoun>a granddaddy purple high</labelNoun>
+    <description>Promotes deep sedation via GABAergic modulation, decreasing motor activity and increasing appetite through hypothalamic stimulation.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <hungerRateFactorOffset>0.2</hungerRateFactorOffset>
+          <statFactors>
+            <RestFallRateFactor>0.8</RestFallRateFactor>
+          </statFactors>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>CC_dried_Granddaddy_PurpleHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Granddaddy_PurpleHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>feeling cozy</label>
+        <description>So warm… so sleepy… I could melt into this bed.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Granddaddy Purple Addiction ============================== -->
+  
+  <ChemicalDef>
+    <defName>CC_dried_Granddaddy_Purple</defName>
+    <label>Granddaddy Purple</label>
+    <addictionHediff>CC_dried_Granddaddy_PurpleAddiction</addictionHediff>
+    <toleranceHediff>CC_dried_Granddaddy_PurpleTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <onGeneratedAddictedEvents>
+      <li>
+        <hediff>ChemicalDamageSevere</hediff>
+        <chance>0.15</chance>
+        <partsToAffect>
+          <li>Liver</li>
+        </partsToAffect>
+      </li>
+    </onGeneratedAddictedEvents>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>CC_Chemical_dried_Granddaddy_Purple</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>dried Granddaddy Purple</label>
+    <description>Because of dried granddaddy purple addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>50</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>CC_dried_Granddaddy_PurpleTolerance</defName>
+    <label>dried granddaddy purple tolerance</label>
+    <description>A built-up tolerance to dried granddaddy purple. The more severe this tolerance is, the more it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>CC_dried_Granddaddy_Purple</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 180)</li>
+            <li>(1, 135)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Liver</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>CC_dried_Granddaddy_PurpleAddiction</defName>
+    <label>dried granddaddy purple addiction</label>
+    <description>A chemical addiction to dried granddaddy purple. Long-term presence of dried granddaddy purple has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of dried granddaddy purple, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>CC_Chemical_dried_Granddaddy_Purple</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+	  </li>
+      <li>
+        <label>withdrawal</label>
+        <socialFightChanceFactor>3.0</socialFightChanceFactor>
+        <hungerRateFactorOffset>0.1</hungerRateFactorOffset>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Binging_DrugExtreme</mentalState>
+            <mtbDays>40</mtbDays>
+          </li>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>10</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>CC_dried_Granddaddy_PurpleWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Granddaddy_PurpleAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>Tossing and Turning</label>
+        <description>I can't sleep. I toss, I turn, but nothing helps.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Dried Strawberry Cough ============================== -->
+
+  <ThingDef ParentName="CC_MakeableRawDrugBase">
+    <defName>CC_dried_Strawberry_Cough</defName>
+    <label>Dried Strawberry Cough</label>
+    <description>A sativa known for its uplifting and anti-anxiety effects, boosting focus and social interactions.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Strawberry_CoughHigh</HediffDef>
+      <HediffDef>CC_dried_Strawberry_CoughTolerance</HediffDef>
+      <HediffDef>CC_dried_Strawberry_CoughAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Strawberry_Cough</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>8</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Strawberry_CoughHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Strawberry_Cough</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Strawberry_Cough</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Strawberry_CoughTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Strawberry_Cough</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CC_primitive_drying_rack</li>
+        <li>CC_industrial_drying_rack</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_Strawberry_Cough>1</CC_Strawberry_Cough>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Strawberry_Cough</chemical>
+        <addictiveness>0.05</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_MakeableDrugBase">
+    <defName>CC_dried_Strawberry_Cough_Packed</defName>
+    <label>Dried Strawberry Cough (Packed)</label>
+    <description>A sativa known for its uplifting and anti-anxiety effects, boosting focus and social interactions. It is packed and ready for sell!</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Strawberry_CoughHigh</HediffDef>
+      <HediffDef>CC_dried_Strawberry_CoughTolerance</HediffDef>
+      <HediffDef>CC_dried_Strawberry_CoughAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Strawberry_Cough_packed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>55</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Strawberry_CoughHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Strawberry_Cough</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Strawberry_Cough</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Strawberry_CoughTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Strawberry_Cough</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>2408</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_dried_Strawberry_Cough>1</CC_dried_Strawberry_Cough>
+      <CC_Plastic_Pack>1</CC_Plastic_Pack>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Strawberry_Cough</chemical>
+        <addictiveness>0.05</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>CC_dried_Strawberry_CoughHigh</defName>
+    <label>high on dried strawberry cough</label>
+    <labelNoun>a strawberry cough high</labelNoun>
+    <description>Enhances dopaminergic transmission, leading to heightened focus, reduced social inhibition, and a mild anxiolytic effect.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <capMods>
+            <li>
+              <capacity>Manipulation</capacity>
+              <offset>0.18</offset>
+            </li>
+            <li>
+              <capacity>Talking</capacity>
+              <offset>0.12</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>CC_dried_Strawberry_CoughHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Strawberry_CoughHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>feeling inspired</label>
+        <description>Why do I love talking so much right now? Hey, you! Let's chat!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Strawberry Cough Addiction ============================== -->
+  
+  <ChemicalDef>
+    <defName>CC_dried_Strawberry_Cough</defName>
+    <label>Strawberry Cough</label>
+    <addictionHediff>CC_dried_Strawberry_CoughAddiction</addictionHediff>
+    <toleranceHediff>CC_dried_Strawberry_CoughTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <onGeneratedAddictedEvents>
+      <li>
+        <hediff>ChemicalDamageSevere</hediff>
+        <chance>0.15</chance>
+        <partsToAffect>
+          <li>Lung</li>
+        </partsToAffect>
+      </li>
+    </onGeneratedAddictedEvents>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>CC_Chemical_dried_Strawberry_Cough</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>dried Strawberry Cough</label>
+    <description>Because of dried strawberry cough addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>50</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>CC_dried_Strawberry_CoughTolerance</defName>
+    <label>dried strawberry cough tolerance</label>
+    <description>A built-up tolerance to dried strawberry cough. The more severe this tolerance is, the more it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>CC_dried_Strawberry_Cough</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 180)</li>
+            <li>(1, 135)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Lung</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>CC_dried_Strawberry_CoughAddiction</defName>
+    <label>dried strawberry cough addiction</label>
+    <description>A chemical addiction to dried strawberry cough. Long-term presence of dried strawberry cough has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of dried strawberry cough, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>CC_Chemical_dried_Strawberry_Cough</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+	  </li>
+      <li>
+        <label>withdrawal</label>
+        <socialFightChanceFactor>3.0</socialFightChanceFactor>
+        <hungerRateFactorOffset>0.1</hungerRateFactorOffset>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.05</offset>
+           </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Binging_DrugExtreme</mentalState>
+            <mtbDays>40</mtbDays>
+          </li>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>10</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>CC_dried_Strawberry_CoughWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Strawberry_CoughAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>Lethargic and Down</label>
+        <description>I can't focus... everything feels blurry.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Dried Blue Dream ============================== -->
+
+  <ThingDef ParentName="CC_MakeableRawDrugBase">
+    <defName>CC_dried_Blue_Dream</defName>
+    <label>Dried Blue Dream</label>
+    <description>A well-balanced hybrid, mild euphoria can lead to occasional dependence.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Blue_DreamHigh</HediffDef>
+      <HediffDef>CC_dried_Blue_DreamTolerance</HediffDef>
+      <HediffDef>CC_dried_Blue_DreamAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Blue_Dream</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>8</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Blue_DreamHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Blue_Dream</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Blue_Dream</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Blue_DreamTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Blue_Dream</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CC_primitive_drying_rack</li>
+        <li>CC_industrial_drying_rack</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>400</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_Blue_Dream>1</CC_Blue_Dream>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Blue_Dream</chemical>
+        <addictiveness>0.12</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_MakeableDrugBase">
+    <defName>CC_dried_Blue_Dream_Packed</defName>
+    <label>Dried Blue Dream (Packed)</label>
+    <description>A well-balanced hybrid, mild euphoria can lead to occasional dependence. It is packed and ready for sell!</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Blue_DreamHigh</HediffDef>
+      <HediffDef>CC_dried_Blue_DreamTolerance</HediffDef>
+      <HediffDef>CC_dried_Blue_DreamAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Blue_Dream_packed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>62</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Blue_DreamHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Blue_Dream</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Blue_Dream</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Blue_DreamTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Blue_Dream</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>2409</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_dried_Blue_Dream>1</CC_dried_Blue_Dream>
+      <CC_Plastic_Pack>1</CC_Plastic_Pack>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Blue_Dream</chemical>
+        <addictiveness>0.12</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>CC_dried_Blue_DreamHigh</defName>
+    <label>high on dried blue dream</label>
+    <labelNoun>a blue dream high</labelNoun>
+    <description>Modulates serotonin and dopamine pathways, promoting relaxation while maintaining cognitive function and creative ideation.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <capMods>
+            <li>
+              <capacity>Manipulation</capacity>
+              <offset>0.18</offset>
+            </li>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.24</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>CC_dried_Blue_DreamHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Blue_DreamHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>dreamy state</label>
+        <description>I have the best idea… I need to write this down.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Blue Dream Addiction ============================== -->
+  
+  <ChemicalDef>
+    <defName>CC_dried_Blue_Dream</defName>
+    <label>Blue Dream</label>
+    <addictionHediff>CC_dried_Blue_DreamAddiction</addictionHediff>
+    <toleranceHediff>CC_dried_Blue_DreamTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <onGeneratedAddictedEvents>
+      <li>
+        <hediff>ChemicalDamageSevere</hediff>
+        <chance>0.15</chance>
+        <partsToAffect>
+          <li>Brain</li>
+        </partsToAffect>
+      </li>
+    </onGeneratedAddictedEvents>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>CC_Chemical_dried_Blue_Dream</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>dried Blue Dream</label>
+    <description>Because of dried blue dream addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>50</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>CC_dried_Blue_DreamTolerance</defName>
+    <label>dried blue dream tolerance</label>
+    <description>A built-up tolerance to dried blue dream. The more severe this tolerance is, the more it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>CC_dried_Blue_Dream</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 180)</li>
+            <li>(1, 135)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Brain</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>CC_dried_Blue_DreamAddiction</defName>
+    <label>dried blue dream addiction</label>
+    <description>A chemical addiction to dried blue dream. Long-term presence of dried blue dream has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of dried blue dream, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>CC_Chemical_dried_Blue_Dream</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+	  </li>
+      <li>
+        <label>withdrawal</label>
+        <painFactor>1.05</painFactor>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.20</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>CC_dried_Blue_DreamWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Blue_DreamAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>Lacking Inspiration</label>
+        <description>I feel uninspired. Just staring at this canvas, doing nothing.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Dried Lemon Haze ============================== -->
+
+  <ThingDef ParentName="CC_MakeableRawDrugBase">
+    <defName>CC_dried_Lemon_Haze</defName>
+    <label>Dried Lemon Haze</label>
+    <description>A zesty, energetic sativa that sharpens focus, improves mood, and reduces fatigue.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Lemon_HazeHigh</HediffDef>
+      <HediffDef>CC_dried_Lemon_HazeTolerance</HediffDef>
+      <HediffDef>CC_dried_Lemon_HazeAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Lemon_Haze</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>8</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Lemon_HazeHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Lemon_Haze</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Lemon_Haze</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Lemon_HazeTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Lemon_Haze</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CC_primitive_drying_rack</li>
+        <li>CC_industrial_drying_rack</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>500</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_Lemon_Haze>1</CC_Lemon_Haze>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Lemon_Haze</chemical>
+        <addictiveness>0.07</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_MakeableDrugBase">
+    <defName>CC_dried_Lemon_Haze_Packed</defName>
+    <label>Dried Lemon Haze (Packed)</label>
+    <description>A zesty, energetic sativa that sharpens focus, improves mood, and reduces fatigue. It is packed and ready for sell!</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Lemon_HazeHigh</HediffDef>
+      <HediffDef>CC_dried_Lemon_HazeTolerance</HediffDef>
+      <HediffDef>CC_dried_Lemon_HazeAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Lemon_Haze_packed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>59</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Lemon_HazeHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Lemon_Haze</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Lemon_Haze</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Lemon_HazeTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Lemon_Haze</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>2410</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_dried_Lemon_Haze>1</CC_dried_Lemon_Haze>
+      <CC_Plastic_Pack>1</CC_Plastic_Pack>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Lemon_Haze</chemical>
+        <addictiveness>0.07</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>CC_dried_Lemon_HazeHigh</defName>
+    <label>high on dried lemon haze</label>
+    <labelNoun>a lemon haze high</labelNoun>
+    <description>Increases central nervous system excitability through elevated norepinephrine levels, enhancing wakefulness and motivation.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <capMods>
+            <li>
+              <capacity>Manipulation</capacity>
+              <offset>0.18</offset>
+            </li>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.22</offset>
+            </li>
+            <li>
+              <capacity>Talking</capacity>
+              <offset>0.16</offset>
+            </li>
+          </capMods>
+          <statOffsets>
+            <WorkSpeedGlobal>0.15</WorkSpeedGlobal>
+            <MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.1</MeditationFocusGain>
+          </statOffsets>
+          <statFactors>
+            <RestFallRateFactor>0.1</RestFallRateFactor>
+          </statFactors>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>CC_dried_Lemon_HazeHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Lemon_HazeHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>feeling zesty</label>
+        <description>Let's go! Let's do things! Productivity overload!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Lemon Haze Addiction ============================== -->
+  
+  <ChemicalDef>
+    <defName>CC_dried_Lemon_Haze</defName>
+    <label>Lemon Haze</label>
+    <addictionHediff>CC_dried_Lemon_HazeAddiction</addictionHediff>
+    <toleranceHediff>CC_dried_Lemon_HazeTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <onGeneratedAddictedEvents>
+      <li>
+        <hediff>ChemicalDamageSevere</hediff>
+        <chance>0.15</chance>
+        <partsToAffect>
+          <li>Heart</li>
+        </partsToAffect>
+      </li>
+    </onGeneratedAddictedEvents>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>CC_Chemical_dried_Lemon_Haze</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>dried Lemon Haze</label>
+    <description>Because of dried lemon haze addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>50</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>CC_dried_Lemon_HazeTolerance</defName>
+    <label>dried lemon haze tolerance</label>
+    <description>A built-up tolerance to dried lemon haze. The more severe this tolerance is, the more it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>CC_dried_Lemon_Haze</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 180)</li>
+            <li>(1, 135)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Heart</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>CC_dried_Lemon_HazeAddiction</defName>
+    <label>dried lemon haze addiction</label>
+    <description>A chemical addiction to dried lemon haze. Long-term presence of dried lemon haze has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of dried lemon haze, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>CC_Chemical_dried_Lemon_Haze</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+	  </li>
+      <li>
+        <label>withdrawal</label>
+        <painFactor>1.05</painFactor>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>CC_dried_Lemon_HazeWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Lemon_HazeAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>Lethargic and Down</label>
+        <description>Why am I so sluggish? Everything feels like a chore.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Dried Pink Kush ============================== -->
+
+  <ThingDef ParentName="CC_MakeableRawDrugBase">
+    <defName>CC_dried_Pink_Kush</defName>
+    <label>Dried Pink Kush</label>
+    <description>A potent indica with strong stress relief, deep relaxation, and a tranquil, dreamlike state.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Pink_KushHigh</HediffDef>
+      <HediffDef>CC_dried_Pink_KushTolerance</HediffDef>
+      <HediffDef>CC_dried_Pink_KushAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Pink_Kush</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>12</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.80</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Pink_KushHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Pink_Kush</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Pink_Kush</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Pink_KushTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Pink_Kush</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CC_primitive_drying_rack</li>
+        <li>CC_industrial_drying_rack</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>600</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_Pink_Kush>1</CC_Pink_Kush>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Pink_Kush</chemical>
+        <addictiveness>0.22</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_MakeableDrugBase">
+    <defName>CC_dried_Pink_Kush_Packed</defName>
+    <label>Pink Kush (Packed)</label>
+    <description>A potent indica with strong stress relief, deep relaxation, and a tranquil, dreamlike state. It is packed and ready for sell!</description>
+    <descriptionHyperlinks>
+      <HediffDef>CC_dried_Pink_KushHigh</HediffDef>
+      <HediffDef>CC_dried_Pink_KushTolerance</HediffDef>
+      <HediffDef>CC_dried_Pink_KushAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Pink_Kush_packed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>77</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Pink_KushHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>CC_dried_Pink_Kush</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.1</offset>
+          <toleranceChemical>CC_dried_Pink_Kush</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CC_dried_Pink_KushTolerance</hediffDef>
+          <toleranceChemical>CC_dried_Pink_Kush</toleranceChemical>
+          <severity>0.04</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>2411</displayPriority>
+    </recipeMaker>
+    <costList>
+      <CC_dried_Pink_Kush>1</CC_dried_Pink_Kush>
+      <CC_Plastic_Pack>1</CC_Plastic_Pack>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CC_dried_Pink_Kush</chemical>
+        <addictiveness>0.22</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>111</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>CC_dried_Pink_KushHigh</defName>
+    <label>high on dried pink kush</label>
+    <labelNoun>a pink kush high</labelNoun>
+    <description>Modulates serotonin and dopamine pathways, promoting relaxation while maintaining cognitive function and creative ideation.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painFactor>0.70</painFactor>
+          <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-0.18</offset>
+            </li>
+          </capMods>
+          <statFactors>
+            <RestFallRateFactor>0.1</RestFallRateFactor>
+          </statFactors>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>CC_dried_Pink_KushHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Pink_KushHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>tranquil bliss</label>
+        <description>Everything is so slow… in a good way.</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<!-- ============================== Pink Kush Addiction ============================== -->
+  
+  <ChemicalDef>
+    <defName>CC_dried_Pink_Kush</defName>
+    <label>Pink Kush</label>
+    <addictionHediff>CC_dried_Pink_KushAddiction</addictionHediff>
+    <toleranceHediff>CC_dried_Pink_KushTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.9</onGeneratedAddictedToleranceChance>
+    <onGeneratedAddictedEvents>
+      <li>
+        <hediff>ChemicalDamageSevere</hediff>
+        <chance>0.15</chance>
+        <partsToAffect>
+          <li>Lung</li>
+          <li>Liver</li>
+        </partsToAffect>
+      </li>
+    </onGeneratedAddictedEvents>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>CC_Chemical_dried_Pink_Kush</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>dried Pink Kush</label>
+    <description>Because of dried pink kush addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>50</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>CC_dried_Pink_KushTolerance</defName>
+    <label>dried pink kush tolerance</label>
+    <description>A built-up tolerance to dried pink kush. The more severe this tolerance is, the more it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>CC_dried_Pink_Kush</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 180)</li>
+            <li>(1, 135)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Lung</li>
+          <li>Liver</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>CC_dried_Pink_KushAddiction</defName>
+    <label>dried pink kush addiction</label>
+    <description>A chemical addiction to dried pink kush. Long-term presence of dried pink kush has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of dried pink kush, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>CC_Chemical_dried_Pink_Kush</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+	  </li>
+      <li>
+        <label>withdrawal</label>
+        <painFactor>1.2</painFactor>
+        <statOffsets>
+          <RestFallRateFactor>0.2</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>CC_dried_Pink_KushWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>CC_dried_Pink_KushAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>Agitated and Sleepless</label>
+        <description>I can't sleep. I just lie here, restless and irritated.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

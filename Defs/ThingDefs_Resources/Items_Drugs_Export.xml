@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- ============================== Strain Jars ============================== -->
+
+  <ThingDef Name="CC_ExportDrugBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <statBases>
+      <Flammability>2</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+      <Beauty>-4</Beauty>
+      <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>150</stackLimit>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Drugs</li>
+    </tradeTags>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+        <li>CC_packing_station</li>
+      </recipeUsers>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <pathCost>14</pathCost>
+    <burnableByRecipe>true</burnableByRecipe>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_OG_kush_jar</defName>
+    <label>OG kush jar</label>
+    <description>A plastic jar made from plastic, contain OG kush.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_OG_kush_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>405</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <recipeMaker>
+
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <CC_OG_Kush>10</CC_OG_Kush>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_Granddaddy_Purple_jar</defName>
+    <label>Granddaddy purple jar</label>
+    <description>A plastic jar made from plastic, contain OG kush.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_Granddaddy_Purple_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>670</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_Granddaddy_Purple>10</CC_Granddaddy_Purple>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_Strawberry_Cough_jar</defName>
+    <label>Strawberry cough jar</label>
+    <description>A plastic jar made from plastic, contain strawberry cough.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_Strawberry_Cough_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>520</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_Strawberry_Cough>10</CC_Strawberry_Cough>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_Blue_Dream_jar</defName>
+    <label>Blue dream jar</label>
+    <description>A plastic jar made from plastic, contain blue dream.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_Blue_Dream_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>580</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_Blue_Dream>10</CC_Blue_Dream>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_Lemon_Haze_jar</defName>
+    <label>Lemon Haze jar</label>
+    <description>A plastic jar made from plastic, contain lemon haze.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_Lemon_Haze_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>560</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_Lemon_Haze>10</CC_Lemon_Haze>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_Pink_Kush_jar</defName>
+    <label>Pink kush jar</label>
+    <description>A plastic jar made from plastic, contain yellow haze.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_Pink_Kush_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>560</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_Pink_Kush>10</CC_Pink_Kush>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+<!-- ============================== Dried Strain Jars ============================== -->
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_OG_kush_jar</defName>
+    <label>OG kush jar</label>
+    <description>A plastic jar made from plastic, contain OG kush.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_OG_kush_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>405</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_dried_OG_Kush>10</CC_dried_OG_Kush>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_Granddaddy_Purple_jar</defName>
+    <label>Granddaddy purple jar</label>
+    <description>A plastic jar made from plastic, contain OG kush.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Granddaddy_Purple_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>670</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_dried_Granddaddy_Purple>10</CC_dried_Granddaddy_Purple>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_Strawberry_Cough_jar</defName>
+    <label>Strawberry cough jar</label>
+    <description>A plastic jar made from plastic, contain strawberry cough.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Strawberry_Cough_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>520</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_dried_Strawberry_Cough>10</CC_dried_Strawberry_Cough>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_Blue_Dream_jar</defName>
+    <label>Blue dream jar</label>
+    <description>A plastic jar made from plastic, contain blue dream.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Blue_Dream_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>580</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_dried_Blue_Dream>10</CC_dried_Blue_Dream>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_Lemon_Haze_jar</defName>
+    <label>Lemon Haze jar</label>
+    <description>A plastic jar made from plastic, contain lemon haze.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Lemon_Haze_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>560</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_dried_Lemon_Haze>10</CC_dried_Lemon_Haze>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_Pink_Kush_jar</defName>
+    <label>Pink kush jar</label>
+    <description>A plastic jar made from plastic, contain yellow haze.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Dried/CC_dried_Pink_Kush_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>560</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <costList>
+      <CC_dried_Pink_Kush>10</CC_dried_Pink_Kush>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+</Defs>

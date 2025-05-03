@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Crimson - Rimweed</name>
+	<author>Nikolas Makarov</author>
+	<supportedVersions>
+		<li>1.4</li>
+		<li>1.5</li>
+	</supportedVersions>
+	<packageId>CC.Drug.Dealer</packageId>
+	<description>Expand your RimWorld colony with a variety of premium cannabis strains! Grow, trade, and process different types of cannabis, each with unique effects on your pawns.
+
+Some sound files and textures in this mod can excluded from our intellectual property. Will be removed if requested by the original author.
+
+The rest of visual assets, including textures, models, and any other graphical elements, are the intellectual property of © 2025 Crimson Corps. and are protected under copyright law. Any unauthorized use, reproduction, or distribution of these assets is strictly prohibited.
+	</description>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+	</loadAfter>
+</ModMetaData>
