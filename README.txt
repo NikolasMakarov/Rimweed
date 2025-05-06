@@ -7,6 +7,8 @@ All textures and artistic elements in this mod are the exclusive intellectual pr
 Copyright Notice:
 © 2025 Crimson Corps
 
+Code by:
+Kira Bad Artist
 Artwork by:
 Nikolas Makarov
 
