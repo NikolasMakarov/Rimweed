@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- ============================== Greenbud Jars ============================== -->
+
+  <ThingDef Name="CC_ExportDrugBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <statBases>
+      <Flammability>2</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+      <Beauty>-4</Beauty>
+      <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>150</stackLimit>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Drugs</li>
+    </tradeTags>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <pathCost>14</pathCost>
+    <burnableByRecipe>true</burnableByRecipe>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_Greenbud_jar</defName>
+    <label>Greenbud jar</label>
+    <description>A plastic jar made from plastic, contain greenbud.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_Greenbud_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>405</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+        <li>CC_packing_station</li>
+      </recipeUsers>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <CC_Greenbud>10</CC_Greenbud>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+<!-- ============================== Dried Greenbud Jars ============================== -->
+
+  <ThingDef ParentName="CC_ExportDrugBase">
+    <defName>CC_dried_Greenbud_jar</defName>
+    <label>Dried greenbud jar</label>
+    <description>A plastic jar made from plastic, contain dried greenbud.</description>
+    <possessionCount>20</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_dried_Greenbud_jar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>405</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+        <li>CC_packing_station</li>
+      </recipeUsers>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <CC_dried_Greenbud>10</CC_dried_Greenbud>
+      <CC_Jar>1</CC_Jar>
+    </costList>
+  </ThingDef>
+
+</Defs>
