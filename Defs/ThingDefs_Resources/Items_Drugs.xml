@@ -43,14 +43,13 @@
   </ThingDef>
 
   <ThingDef Name="CC_MakeableDrugBase" ParentName="DrugBase" Abstract="True">
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>3</DeteriorationRate>
-      <Beauty>-4</Beauty>
-      <Nutrition>0.05</Nutrition>
-      <WorkToMake>150</WorkToMake>
-    </statBases>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+      <bulkRecipeCount>20</bulkRecipeCount>
+    </recipeMaker>
   </ThingDef>
 
 <!-- ============================== Greenbud Plant ============================== -->
