@@ -7,7 +7,7 @@
     <defName>CC_primitive_drying_rack</defName>
     <label>primitive drying rack</label>
     <description>A simple wooden rack for air-drying freshly harvested buds. Made from planks and rope, it slows the drying process to preserve flavor, but is vulnerable to weather and pests. A low-tech solution for colonies that favor tradition or lack resources.</description>
-    <thingClass>Building_WorkTable</thingClass>
+    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
       <texPath>Things/Building/CC_primitive_drying_rack</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -39,11 +39,41 @@
       <WoodLog>30</WoodLog>
     </costList>
     <comps>
-      <li Class="CompProperties_TemperatureRuinable">
-        <minSafeTemperature>-1</minSafeTemperature>
-        <maxSafeTemperature>32</maxSafeTemperature>
-        <progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
-      </li>
+        <li Class="ItemProcessor.CompProperties_ItemProcessor">
+          <buildingOnGraphic>Things/Building/CC_primitive_drying_rack</buildingOnGraphic>
+          <buildingFinishedGraphic>Things/Building/CC_primitive_drying_rack</buildingFinishedGraphic>
+          <numberOfInputs>1</numberOfInputs>
+          <qualitySelector>false</qualitySelector>
+          <isCategoryBuilding>false</isCategoryBuilding>
+          <acceptsNoneAsInput>false</acceptsNoneAsInput>
+          <InsertFirstItemDesc>RimWeed_InsertWeed</InsertFirstItemDesc>
+  
+          <isSemiAutomaticMachine>true</isSemiAutomaticMachine>
+          <resetSemiautomaticIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</resetSemiautomaticIcon>
+          <chooseIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</chooseIngredientsIcon>
+  
+          <bringIngredientsText>RimWeed_StartWeedInsertion</bringIngredientsText>
+          <bringIngredientsDesc>RimWeed_StartWeedInsertionDesc</bringIngredientsDesc>
+          <bringIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</bringIngredientsIcon>
+  
+          <cancelIngredientsText>RimWeed_CancelWeedInsertion</cancelIngredientsText>
+          <cancelIngredientsDesc>RimWeed_CancelWeedInsertionDesc</cancelIngredientsDesc>
+          <cancelIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</cancelIngredientsIcon>
+  
+          <isTemperatureDependingMachine>true</isTemperatureDependingMachine>
+          <minTemp>-1</minTemp>
+          <maxTemp>32</maxTemp>
+  
+          <removeProductText>RimWeed_RemoveWeed</removeProductText>
+          <removeProductDesc>RimWeed_RemoveWeedDesc</removeProductDesc>
+          <removeProductIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</removeProductIcon>
+          <noPowerDestroysProgress>false</noPowerDestroysProgress>
+				<rareTicksToDestroy>30</rareTicksToDestroy>
+				<showProgressBar>true</showProgressBar>
+  
+          <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+  
+        </li>
     </comps>
     <tickerType>Rare</tickerType>
     <rotatable>true</rotatable>
@@ -63,11 +93,11 @@
   
 <!-- ============================== Industrial Drying Rack ============================== -->
 
- <ThingDef ParentName="BenchBase">
+ <ThingDef ParentName="BuildingBase">
     <defName>CC_industrial_drying_rack</defName>
     <label>industrial drying rack</label>
     <description>A stainless steel drying rack designed for efficiency and hygiene. Speeds up the curing process while maintaining quality and preventing mold.</description>
-    <thingClass>Building_WorkTable</thingClass>
+    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
       <texPath>Things/Building/CC_industrial_drying_rack</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -106,13 +136,51 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <surfaceType>Item</surfaceType>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-    <inspectorTabs>
-      <li>ITab_Bills</li>
-    </inspectorTabs>
     <building>
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
       <paintable>true</paintable>
     </building>
+    <comps>
+      <li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="ItemProcessor.CompProperties_ItemProcessor">
+        <buildingOnGraphic>Things/Building/CC_industrial_drying_rack</buildingOnGraphic>
+        <buildingFinishedGraphic>Things/Building/CC_industrial_drying_rack</buildingFinishedGraphic>
+        <numberOfInputs>1</numberOfInputs>
+        <qualitySelector>false</qualitySelector>
+        <isCategoryBuilding>false</isCategoryBuilding>
+        <acceptsNoneAsInput>false</acceptsNoneAsInput>
+        <InsertFirstItemDesc>RimWeed_InsertWeed</InsertFirstItemDesc>
+
+        <isSemiAutomaticMachine>true</isSemiAutomaticMachine>
+        <resetSemiautomaticIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</resetSemiautomaticIcon>
+        <chooseIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</chooseIngredientsIcon>
+
+        <bringIngredientsText>RimWeed_StartWeedInsertion</bringIngredientsText>
+        <bringIngredientsDesc>RimWeed_StartWeedInsertionDesc</bringIngredientsDesc>
+        <bringIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</bringIngredientsIcon>
+
+        <cancelIngredientsText>RimWeed_CancelWeedInsertion</cancelIngredientsText>
+        <cancelIngredientsDesc>RimWeed_CancelWeedInsertionDesc</cancelIngredientsDesc>
+        <cancelIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</cancelIngredientsIcon>
+        <removeProductText>RimWeed_RemoveWeed</removeProductText>
+        <removeProductDesc>RimWeed_RemoveWeedDesc</removeProductDesc>
+        <removeProductIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</removeProductIcon>
+
+        <isTemperatureDependingMachine>true</isTemperatureDependingMachine>
+        <minTemp>-7</minTemp>
+        <maxTemp>40</maxTemp>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>20</rareTicksToDestroy>
+				<noPowerDestroysMessage>RimWeed_WeedSpoiled</noPowerDestroysMessage>
+      <showProgressBar>true</showProgressBar>
+        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+      </li>
+  </comps>
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
