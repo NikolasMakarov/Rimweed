@@ -23,5 +23,6 @@ The rest of visual assets, including textures, models, and any other graphical e
 	</modDependencies>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 </ModMetaData>
