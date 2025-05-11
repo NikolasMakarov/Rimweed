@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ItemProcessor.CombinationDef>
+    <defName>Rimweed_CureWeed</defName>
+    <building>CC_primitive_drying_rack</building>
+    <isCategoryRecipe>false</isCategoryRecipe>
+    <items>
+        <li>CC_Greenbud</li>
+    </items>	
+    <amount>
+        <li>25</li>
+    </amount>
+    <result>CC_dried_Greenbud</result>	
+    <yield>25</yield>
+    <useQualityIncreasing>false</useQualityIncreasing>
+    <singleTimeIfNotQualityIncreasing>10</singleTimeIfNotQualityIncreasing>
+</ItemProcessor.CombinationDef>
+<ItemProcessor.CombinationDef>
+    <defName>Rimweed_IndustrialCureWeed</defName>
+    <building>CC_industrial_drying_rack</building>
+    <isCategoryRecipe>false</isCategoryRecipe>
+    <items>
+        <li>CC_Greenbud</li>
+    </items>	
+    <amount>
+        <li>25</li>
+    </amount>
+    <result>CC_dried_Greenbud</result>	
+    <yield>25</yield>
+    <useQualityIncreasing>false</useQualityIncreasing>
+    <singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
+</ItemProcessor.CombinationDef>
+</Defs>

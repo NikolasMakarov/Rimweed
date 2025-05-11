@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ItemProcessor.ItemAcceptedDef>
+        <defName>RimWeed_WeedDrying</defName>
+        <building>CC_primitive_drying_rack</building>
+        <slot>1</slot>
+        <items>			
+            <li>CC_Greenbud</li>			
+        </items>							
+    </ItemProcessor.ItemAcceptedDef>
+    <ItemProcessor.ItemAcceptedDef>
+        <defName>RimWeed_IndustrialWeedDrying</defName>
+        <building>CC_industrial_drying_rack</building>
+        <slot>1</slot>
+        <items>			
+            <li>CC_Greenbud</li>			
+        </items>							
+    </ItemProcessor.ItemAcceptedDef>
+</Defs>
