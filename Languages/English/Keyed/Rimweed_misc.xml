@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <RimWeed_InsertWeed>Insert uncured greenbud</RimWeed_InsertWeed>
+    <RimWeed_StartWeedInsertion>Insert greenbud</RimWeed_StartWeedInsertion>
+    <RimWeed_StertWeedInsertionDesc>Hang the greenbud to dry and cure.</RimWeed_StertWeedInsertionDesc>
+    <RimWeed_CancelWeedInsertion>Cancel bringing greenbud</RimWeed_CancelWeedInsertion>
+    <RimWeed_CancelWeedInsertionDesc>Stop bringing greenbud to the rack.</RimWeed_CancelWeedInsertionDesc>
+    <RimWeed_RemoveWeed>Remove greenbud</RimWeed_RemoveWeed>
+    <RimWeed_RemoveWeedDesc>Remove greenbud from the rack.</RimWeed_RemoveWeedDesc>
+    <RimWeed_WeedSpoiled>Power failure in the processor has caused the product to spoil</RimWeed_WeedSpoiled>
+</LanguageData>
