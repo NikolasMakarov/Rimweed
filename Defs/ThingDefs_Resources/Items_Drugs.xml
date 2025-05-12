@@ -13,7 +13,6 @@
       <Flammability>1.0</Flammability>
       <DeteriorationRate>6</DeteriorationRate>
       <Beauty>-4</Beauty>
-      <Nutrition>0.05</Nutrition>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
     <stackLimit>150</stackLimit>
@@ -108,11 +107,10 @@
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <MarketValue>4</MarketValue>
+      <MarketValue>8</MarketValue>
       <Mass>0.05</Mass>
     </statBases>
     <techLevel>Industrial</techLevel>
-    <minRewardCount>10</minRewardCount>
     <ingestible>
       <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
@@ -162,8 +160,8 @@
 
   <ThingDef ParentName="CC_MakeableDrugBase">
     <defName>CC_Greenbud_Packed</defName>
-    <label>OG Kush (Packed)</label>
-    <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts. It is packed and ready for sell!</description>
+    <label>Premium Greenbud</label>
+    <description>A carefully selected top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
     <descriptionHyperlinks>
       <HediffDef>CC_GreenbudHigh</HediffDef>
       <HediffDef>CC_GreenbudTolerance</HediffDef>
@@ -177,15 +175,15 @@
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <MarketValue>38</MarketValue>
+      <WorkToMake>60</WorkToMake>
+      <MarketValue>45</MarketValue>
       <Mass>0.05</Mass>
     </statBases>
     <techLevel>Industrial</techLevel>
-    <minRewardCount>10</minRewardCount>
     <ingestible>
       <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
-      <joy>0.20</joy>
+      <joy>0.60</joy>
       <baseIngestTicks>650</baseIngestTicks>
       <nurseable>true</nurseable>
       <drugCategory>Hard</drugCategory>
@@ -225,7 +223,7 @@
       <displayPriority>2400</displayPriority>
     </recipeMaker>
     <costList>
-      <CC_Greenbud>1</CC_Greenbud>
+      <CC_Greenbud>4</CC_Greenbud>
       <CC_Plastic_Pack>1</CC_Plastic_Pack>
     </costList>
     <comps>
@@ -243,7 +241,7 @@
 
   <ThingDef ParentName="CC_OrganicProductBase">
     <defName>CC_dried_Greenbud</defName>
-    <label>Greenbud</label>
+    <label>Dried Greenbud</label>
     <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
     <descriptionHyperlinks>
       <HediffDef>CC_GreenbudHigh</HediffDef>
@@ -258,7 +256,7 @@
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <MarketValue>4</MarketValue>
+      <MarketValue>12</MarketValue>
       <Mass>0.05</Mass>
     </statBases>
     <techLevel>Industrial</techLevel>
@@ -266,7 +264,7 @@
     <ingestible>
       <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
-      <joy>0.20</joy>
+      <joy>0.30</joy>
       <baseIngestTicks>650</baseIngestTicks>
       <nurseable>true</nurseable>
       <drugCategory>Social</drugCategory>
@@ -312,8 +310,8 @@
 
   <ThingDef ParentName="CC_MakeableDrugBase">
     <defName>CC_dried_Greenbud_Packed</defName>
-    <label>OG Kush (Packed)</label>
-    <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts. It is packed and ready for sell!</description>
+    <label>Dried Premium Greenbud</label>
+    <description>A carefully selected and expertly cured top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
     <descriptionHyperlinks>
       <HediffDef>CC_GreenbudHigh</HediffDef>
       <HediffDef>CC_GreenbudTolerance</HediffDef>
@@ -327,15 +325,16 @@
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <MarketValue>38</MarketValue>
+      <WorkToMake>60</WorkToMake>
+      <MarketValue>64</MarketValue>
       <Mass>0.05</Mass>
     </statBases>
     <techLevel>Industrial</techLevel>
-    <minRewardCount>10</minRewardCount>
+    <minRewardCount>5</minRewardCount>
     <ingestible>
       <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
-      <joy>0.20</joy>
+      <joy>0.70</joy>
       <baseIngestTicks>650</baseIngestTicks>
       <nurseable>true</nurseable>
       <drugCategory>Hard</drugCategory>
@@ -375,7 +374,7 @@
       <displayPriority>2401</displayPriority>
     </recipeMaker>
     <costList>
-      <CC_Greenbud>1</CC_Greenbud>
+      <CC_Greenbud>4</CC_Greenbud>
       <CC_Plastic_Pack>1</CC_Plastic_Pack>
     </costList>
     <comps>
