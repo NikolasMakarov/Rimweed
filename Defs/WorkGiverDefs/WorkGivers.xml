@@ -12,6 +12,7 @@
     <priorityInType>95</priorityInType>
     <fixedBillGiverDefs>
       <li>CC_primitive_drying_rack</li>
+      <li>CC_industrial_drying_rack</li>
     </fixedBillGiverDefs>
     <verb>dry buds</verb>
     <gerund>drying buds at</gerund>
@@ -21,6 +22,26 @@
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
   
+  <WorkGiverDef>
+    <defName>DoBillsPackDrugs</defName>
+    <label>pack drugs</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <workTags>
+      <li>Intellectual</li>
+    </workTags>
+    <priorityInType>95</priorityInType>
+    <fixedBillGiverDefs>
+      <li>CC_packing_station</li>
+    </fixedBillGiverDefs>
+    <verb>pack drugs</verb>
+    <gerund>packing drugs at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
 </Defs>
 
 
