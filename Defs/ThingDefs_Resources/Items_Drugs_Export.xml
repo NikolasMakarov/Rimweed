@@ -17,7 +17,8 @@
       <li>Manufactured</li>
     </thingCategories>
     <statBases>
-      <MaxHitPoints>30</MaxHitPoints>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToMake>20</WorkToMake>
       <MarketValue>405</MarketValue>
       <Mass>0.60</Mass>
       <DeteriorationRate>1.0</DeteriorationRate>
@@ -53,7 +54,8 @@
       <li>Manufactured</li>
     </thingCategories>
     <statBases>
-      <MaxHitPoints>30</MaxHitPoints>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToMake>20</WorkToMake>
       <MarketValue>405</MarketValue>
       <Mass>0.60</Mass>
       <DeteriorationRate>1.0</DeteriorationRate>

@@ -5,14 +5,11 @@
     <defName>CC_Plastic_Pack</defName>
     <label>Plastic pack</label>
     <description>A pack made from plastic.</description>
-    <possessionCount>20</possessionCount>
-    <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Item/Resource/CC_Plastic_Pack</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.75</drawSize>
     </graphicData>
-    <stackLimit>150</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
     <statBases>
       <MaxHitPoints>20</MaxHitPoints>
@@ -29,6 +26,7 @@
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>
+        <li>CC_packing_station</li>
       </recipeUsers>
       <displayPriority>161</displayPriority>
       <bulkRecipeCount>20</bulkRecipeCount>
@@ -42,14 +40,11 @@
     <defName>CC_Jar</defName>
     <label>Jar</label>
     <description>A plastic jar made from plastic.</description>
-    <possessionCount>20</possessionCount>
-    <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Item/Resource/CC_Jar</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.75</drawSize>
     </graphicData>
-    <stackLimit>150</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
     <statBases>
       <MaxHitPoints>30</MaxHitPoints>
@@ -66,6 +61,7 @@
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>
+        <li>CC_packing_station</li>
       </recipeUsers>
       <displayPriority>162</displayPriority>
       <bulkRecipeCount>10</bulkRecipeCount>

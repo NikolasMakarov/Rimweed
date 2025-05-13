@@ -40,308 +40,119 @@
     </plant>
   </ThingDef>
 
-  <ThingDef ParentName="DrugBase">
+  <ThingDef ParentName="ResourceBase">
     <defName>CC_Greenbud</defName>
     <label>Greenbud</label>
     <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
-    <descriptionHyperlinks>
-      <HediffDef>CC_GreenbudHigh</HediffDef>
-      <HediffDef>CC_GreenbudTolerance</HediffDef>
-      <HediffDef>CC_GreenbudAddiction</HediffDef>
-      <HediffDef>ChemicalDamageSevere</HediffDef>
-    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Item/Drug/CC_Greenbud</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.95</drawSize>
     </graphicData>
-    <rotatable>false</rotatable>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
     <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
       <MarketValue>8</MarketValue>
       <Mass>0.05</Mass>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <Flammability>0.2</Flammability>
     </statBases>
-    <techLevel>Industrial</techLevel>
-    <ingestible>
-      <foodType>Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.20</joy>
-      <baseIngestTicks>650</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Flake</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.23,0,0.065)</offset>
-        </northDefault>
-      </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudHigh</hediffDef>
-          <severity>0.75</severity>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-        </li>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudTolerance</hediffDef>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-          <severity>0.04</severity>
-          <divideByBodySize>true</divideByBodySize>
-          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
-        </li>
-      </outcomeDoers>
-    </ingestible>
-    <comps>
-       <li Class="CompProperties_Drug">
-        <chemical>CC_Greenbud</chemical>
-        <addictiveness>0.10</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
-        <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>110</listOrder>
-        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
-        <largeOverdoseChance>0.015</largeOverdoseChance>
-      </li>
-    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="MakeableDrugBase">
+  <ThingDef ParentName="ResourceBase">
     <defName>CC_Greenbud_Packed</defName>
     <label>Premium Greenbud</label>
     <description>A carefully selected top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
-    <descriptionHyperlinks>
-      <HediffDef>CC_GreenbudHigh</HediffDef>
-      <HediffDef>CC_GreenbudTolerance</HediffDef>
-      <HediffDef>CC_GreenbudAddiction</HediffDef>
-      <HediffDef>ChemicalDamageSevere</HediffDef>
-    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Item/Drug/CC_Greenbud_packed</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.95</drawSize>
     </graphicData>
-    <rotatable>false</rotatable>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
     <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
       <WorkToMake>60</WorkToMake>
       <MarketValue>45</MarketValue>
       <Mass>0.05</Mass>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <Flammability>0.2</Flammability>
     </statBases>
-    <techLevel>Industrial</techLevel>
-    <ingestible>
-      <foodType>Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.60</joy>
-      <baseIngestTicks>650</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Hard</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Flake</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.23,0,0.065)</offset>
-        </northDefault>
-      </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudHigh</hediffDef>
-          <severity>0.75</severity>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-        </li>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudTolerance</hediffDef>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-          <severity>0.04</severity>
-          <divideByBodySize>true</divideByBodySize>
-          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
-        </li>
-      </outcomeDoers>
-    </ingestible>
     <recipeMaker>
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>
+        <li>CC_packing_station</li>
       </recipeUsers>
-      <soundWorking>Recipe_Drug</soundWorking>
-      <displayPriority>2400</displayPriority>
+      <bulkRecipeCount>4</bulkRecipeCount>
     </recipeMaker>
     <costList>
-      <CC_Greenbud>4</CC_Greenbud>
+      <CC_Greenbud>10</CC_Greenbud>
       <CC_Plastic_Pack>1</CC_Plastic_Pack>
     </costList>
-    <comps>
-      <li Class="CompProperties_Drug">
-        <chemical>CC_Greenbud</chemical>
-        <addictiveness>0.10</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
-        <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>110</listOrder>
-        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
-        <largeOverdoseChance>0.015</largeOverdoseChance>
-      </li>
-    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="DrugBase">
+  <ThingDef ParentName="ResourceBase">
     <defName>CC_dried_Greenbud</defName>
     <label>Dried Greenbud</label>
     <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
-    <descriptionHyperlinks>
-      <HediffDef>CC_GreenbudHigh</HediffDef>
-      <HediffDef>CC_GreenbudTolerance</HediffDef>
-      <HediffDef>CC_GreenbudAddiction</HediffDef>
-      <HediffDef>ChemicalDamageSevere</HediffDef>
-    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Item/Drug/CC_dried_Greenbud</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.95</drawSize>
     </graphicData>
-    <rotatable>false</rotatable>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
     <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
       <MarketValue>12</MarketValue>
       <Mass>0.05</Mass>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <Flammability>0.2</Flammability>
     </statBases>
-    <techLevel>Industrial</techLevel>
-    <minRewardCount>10</minRewardCount>
-    <ingestible>
-      <foodType>Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.30</joy>
-      <baseIngestTicks>650</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Joint</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.23,0,0.065)</offset>
-        </northDefault>
-      </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudHigh</hediffDef>
-          <severity>0.75</severity>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-        </li>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudTolerance</hediffDef>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-          <severity>0.04</severity>
-          <divideByBodySize>true</divideByBodySize>
-          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
-        </li>
-      </outcomeDoers>
-    </ingestible>
-    <comps>
-      <li Class="CompProperties_Drug">
-        <chemical>CC_Greenbud</chemical>
-        <addictiveness>0.10</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
-        <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>110</listOrder>
-        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
-        <largeOverdoseChance>0.015</largeOverdoseChance>
-      </li>
-    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="MakeableDrugBase">
+  <ThingDef ParentName="ResourceBase">
     <defName>CC_dried_Greenbud_Packed</defName>
     <label>Dried Premium Greenbud</label>
     <description>A carefully selected and expertly cured top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
-    <descriptionHyperlinks>
-      <HediffDef>CC_GreenbudHigh</HediffDef>
-      <HediffDef>CC_GreenbudTolerance</HediffDef>
-      <HediffDef>CC_GreenbudAddiction</HediffDef>
-      <HediffDef>ChemicalDamageSevere</HediffDef>
-    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Item/Drug/CC_dried_Greenbud_packed</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.95</drawSize>
     </graphicData>
-    <rotatable>false</rotatable>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
     <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
       <WorkToMake>60</WorkToMake>
       <MarketValue>64</MarketValue>
       <Mass>0.05</Mass>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <Flammability>0.2</Flammability>
     </statBases>
-    <techLevel>Industrial</techLevel>
-    <minRewardCount>5</minRewardCount>
-    <ingestible>
-      <foodType>Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.70</joy>
-      <baseIngestTicks>650</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Hard</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Joint</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.23,0,0.065)</offset>
-        </northDefault>
-      </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudHigh</hediffDef>
-          <severity>0.75</severity>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-        </li>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>CC_GreenbudTolerance</hediffDef>
-          <toleranceChemical>CC_Greenbud</toleranceChemical>
-          <severity>0.04</severity>
-          <divideByBodySize>true</divideByBodySize>
-          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
-        </li>
-      </outcomeDoers>
-    </ingestible>
     <recipeMaker>
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>
+        <li>CC_packing_station</li>
       </recipeUsers>
-      <soundWorking>Recipe_Drug</soundWorking>
-      <displayPriority>2401</displayPriority>
+      <bulkRecipeCount>4</bulkRecipeCount>
     </recipeMaker>
     <costList>
-      <CC_Greenbud>4</CC_Greenbud>
+      <CC_dried_Greenbud>10</CC_dried_Greenbud>
       <CC_Plastic_Pack>1</CC_Plastic_Pack>
     </costList>
-    <comps>
-      <li Class="CompProperties_Drug">
-        <chemical>CC_Greenbud</chemical>
-        <addictiveness>0.10</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
-        <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>110</listOrder>
-        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
-        <largeOverdoseChance>0.015</largeOverdoseChance>
-      </li>
-    </comps>
   </ThingDef>
+
 
 </Defs>
