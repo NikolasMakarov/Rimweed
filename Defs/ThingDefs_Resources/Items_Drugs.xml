@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef Name="CC_OrganicProductBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <drawerType>MapMeshOnly</drawerType>
-    <useHitPoints>true</useHitPoints>
-    <healthAffectsPrice>false</healthAffectsPrice>
-    <selectable>true</selectable>
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>6</DeteriorationRate>
-      <Beauty>-4</Beauty>
-    </statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>150</stackLimit>
-    <thingCategories>
-      <li>Drugs</li>
-    </thingCategories>
-    <tradeTags>
-      <li>Drugs</li>
-    </tradeTags>
-    <alwaysHaulable>true</alwaysHaulable>
-    <comps>
-      <li Class="CompProperties_Forbiddable" />
-    </comps>
-    <pathCost>14</pathCost>
-    <burnableByRecipe>true</burnableByRecipe>
-    <resourceReadoutPriority>Last</resourceReadoutPriority>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <allowedArchonexusCount>-1</allowedArchonexusCount>
-    <ingestible>
-      <preferability>NeverForNutrition</preferability>
-      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-      <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
-      <chairSearchRadius>8</chairSearchRadius>
-    </ingestible>
-    <storedConceptLearnOpportunity>DrugPolicies</storedConceptLearnOpportunity>
-    <orderedTakeGroup>Drug</orderedTakeGroup>
-  </ThingDef>
-
-  <ThingDef Name="CC_MakeableDrugBase" ParentName="DrugBase" Abstract="True">
-    <recipeMaker>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <bulkRecipeCount>20</bulkRecipeCount>
-    </recipeMaker>
-  </ThingDef>
-
 <!-- ============================== Greenbud Plant ============================== -->
 
   <ThingDef ParentName="PlantBase">
@@ -90,7 +40,7 @@
     </plant>
   </ThingDef>
 
-  <ThingDef ParentName="CC_OrganicProductBase">
+  <ThingDef ParentName="DrugBase">
     <defName>CC_Greenbud</defName>
     <label>Greenbud</label>
     <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
@@ -146,9 +96,10 @@
       </outcomeDoers>
     </ingestible>
     <comps>
-      <li Class="CompProperties_Drug">
+       <li Class="CompProperties_Drug">
         <chemical>CC_Greenbud</chemical>
         <addictiveness>0.10</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
         <listOrder>110</listOrder>
@@ -158,7 +109,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="CC_MakeableDrugBase">
+  <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_Greenbud_Packed</defName>
     <label>Premium Greenbud</label>
     <description>A carefully selected top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
@@ -230,6 +181,7 @@
       <li Class="CompProperties_Drug">
         <chemical>CC_Greenbud</chemical>
         <addictiveness>0.10</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
         <listOrder>110</listOrder>
@@ -239,7 +191,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="CC_OrganicProductBase">
+  <ThingDef ParentName="DrugBase">
     <defName>CC_dried_Greenbud</defName>
     <label>Dried Greenbud</label>
     <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
@@ -269,7 +221,7 @@
       <nurseable>true</nurseable>
       <drugCategory>Social</drugCategory>
       <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffect>Smoke_Joint</ingestEffect>
       <ingestEffectEat>EatVegetarian</ingestEffectEat>
       <ingestHoldOffsetStanding>
         <northDefault>
@@ -299,6 +251,7 @@
       <li Class="CompProperties_Drug">
         <chemical>CC_Greenbud</chemical>
         <addictiveness>0.10</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
         <listOrder>110</listOrder>
@@ -308,7 +261,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="CC_MakeableDrugBase">
+  <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_dried_Greenbud_Packed</defName>
     <label>Dried Premium Greenbud</label>
     <description>A carefully selected and expertly cured top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
@@ -339,7 +292,7 @@
       <nurseable>true</nurseable>
       <drugCategory>Hard</drugCategory>
       <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffect>Smoke_Joint</ingestEffect>
       <ingestEffectEat>EatVegetarian</ingestEffectEat>
       <ingestHoldOffsetStanding>
         <northDefault>
@@ -381,6 +334,7 @@
       <li Class="CompProperties_Drug">
         <chemical>CC_Greenbud</chemical>
         <addictiveness>0.10</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
         <listOrder>110</listOrder>
@@ -389,164 +343,5 @@
       </li>
     </comps>
   </ThingDef>
-
-  <HediffDef>
-    <defName>CC_GreenbudHigh</defName>
-    <label>high on OG kush</label>
-    <labelNoun>an OG kush high</labelNoun>
-    <description>Induces mild euphoria and anxiolysis through enhanced endocannabinoid signaling, reducing pain perception while slightly impairing cognitive processing.</description>
-    <hediffClass>Hediff_High</hediffClass>
-    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-    <scenarioCanAdd>true</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
-    <isBad>false</isBad>
-    <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-3.0</severityPerDay>
-        <showHoursToRecover>true</showHoursToRecover>
-      </li>
-    </comps>
-      <stages>
-        <li>
-          <painFactor>0.9</painFactor>
-          <statFactors>
-            <RestFallRateFactor>0.33</RestFallRateFactor>
-          </statFactors>
-        </li>
-      </stages>
-  </HediffDef>
-  
-  <ThoughtDef>
-    <defName>CC_GreenbudHigh</defName>
-    <workerClass>ThoughtWorker_Hediff</workerClass>
-    <hediff>CC_GreenbudHigh</hediff>
-    <validWhileDespawned>true</validWhileDespawned>
-    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-    <stages>
-      <li>
-        <label>feeling mellow</label>
-        <description>The world feels slower. But it's kinda nice.</description>
-        <baseMoodEffect>10</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
-
-<!-- ============================== Greenbud Addiction ============================== -->
-  
-  <ChemicalDef>
-    <defName>CC_Greenbud</defName>
-    <label>OG kush</label>
-    <addictionHediff>CC_GreenbudAddiction</addictionHediff>
-    <toleranceHediff>CC_GreenbudTolerance</toleranceHediff>
-    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
-    <onGeneratedAddictedEvents>
-      <li>
-        <hediff>ChemicalDamageSevere</hediff>
-        <chance>0.15</chance>
-        <partsToAffect>
-          <li>Lung</li>
-        </partsToAffect>
-      </li>
-    </onGeneratedAddictedEvents>
-    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
-    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
-    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
-    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
-  </ChemicalDef>
-  
-  <NeedDef ParentName="DrugAddictionNeedBase">
-    <defName>CC_Chemical_Greenbud</defName>
-    <needClass>Need_Chemical</needClass>
-    <label>OG kush</label>
-    <description>Because of OG kush addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-    <listPriority>50</listPriority>
-  </NeedDef>
-
-  <HediffDef ParentName="DrugToleranceBase">
-    <defName>CC_GreenbudTolerance</defName>
-    <label>OG kush tolerance</label>
-    <description>A built-up tolerance to OG kush. The more severe this tolerance is, the more it takes to get the same effect.</description>
-    <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.015</severityPerDay>
-      </li>
-      <li Class="HediffCompProperties_DrugEffectFactor">
-        <chemical>CC_Greenbud</chemical>
-      </li>
-    </comps>
-    <hediffGivers>
-      <li Class="HediffGiver_RandomDrugEffect">
-        <hediff>ChemicalDamageSevere</hediff>
-        <severityToMtbDaysCurve>
-          <points>
-            <li>(0.45, 99999)</li>
-            <li>(0.5, 180)</li>
-            <li>(1, 135)</li>
-          </points>
-        </severityToMtbDaysCurve>
-        <partsToAffect>
-          <li>Lung</li>
-        </partsToAffect>
-      </li>
-    </hediffGivers>
-  </HediffDef>
-  
-  <HediffDef ParentName="AddictionBase">
-    <defName>CC_GreenbudAddiction</defName>
-    <label>Greenbud addiction</label>
-    <description>A chemical addiction to OG kush. Long-term presence of OG kush has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
-\nWithout regular doses of OG kush, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
-    <hediffClass>Hediff_Addiction</hediffClass>
-    <causesNeed>CC_Chemical_Greenbud</causesNeed>
-    <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.0333</severityPerDay>
-        <showDaysToRecover>true</showDaysToRecover>
-      </li>
-    </comps>
-    <stages>
-	  <li>
-	  	<painFactor>1.1</painFactor>
-	  </li>
-      <li>
-        <label>withdrawal</label>
-        <statOffsets>
-          <RestFallRateFactor>0.3</RestFallRateFactor>
-        </statOffsets>
-        <capMods>
-          <li>
-            <capacity>Consciousness</capacity>
-            <offset>-0.05</offset>
-          </li>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>-0.05</offset>
-          </li>
-          <li>
-            <capacity>Manipulation</capacity>
-            <offset>-0.10</offset>
-          </li>
-        </capMods>
-      </li>
-    </stages>
-  </HediffDef>
-
-  <ThoughtDef>
-    <defName>CC_GreenbudWithdrawal</defName>
-    <workerClass>ThoughtWorker_Hediff</workerClass>
-    <hediff>CC_GreenbudAddiction</hediff>
-    <validWhileDespawned>true</validWhileDespawned>
-    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-    <stages>
-      <li>
-        <visible>false</visible>
-      </li>
-      <li>
-        <label>craving greenbud</label>
-        <description>I haven't had greenbud in a while. I feel tense... I just need a little to take the edge off.</description>
-        <baseMoodEffect>-25</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
 
 </Defs>
