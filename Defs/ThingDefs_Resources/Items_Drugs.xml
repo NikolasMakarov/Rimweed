@@ -84,6 +84,7 @@
       <Flammability>0.2</Flammability>
     </statBases>
     <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>
@@ -141,6 +142,7 @@
       <Flammability>0.2</Flammability>
     </statBases>
     <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>
