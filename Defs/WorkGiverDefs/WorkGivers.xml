@@ -2,7 +2,7 @@
 <Defs>
 
   <WorkGiverDef>
-    <defName>DoBillsProduceDrugs</defName>
+    <defName>DoBillsProduceBuds</defName>
     <label>synthesize drugs</label>
     <giverClass>WorkGiver_DoBill</giverClass>
     <workType>Crafting</workType>

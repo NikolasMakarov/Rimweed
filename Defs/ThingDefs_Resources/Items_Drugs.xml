@@ -84,6 +84,10 @@
       <Flammability>0.2</Flammability>
     </statBases>
     <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
       <researchPrerequisite>DrugProduction</researchPrerequisite>
       <recipeUsers>
         <li>CraftingSpot</li>
@@ -142,6 +146,10 @@
       <Flammability>0.2</Flammability>
     </statBases>
     <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
       <researchPrerequisite>DrugProduction</researchPrerequisite>
       <recipeUsers>
         <li>CraftingSpot</li>
