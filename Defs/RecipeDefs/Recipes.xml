@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--
+  <RecipeDef>
+    <defName>CC_MakePremiumGreenbudJoint</defName>
+    <label>make joints x2</label>
+    <description>Make potent herbal joints made from the refined buds of a psychoactive plant.</description>
+    <jobString>Making premium joints.</jobString>
+    <workAmount>600</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>CC_dried_Greenbud_Packed</li>
+          </thingDefs>
+        </filter>
+        <count>1.0</count>
+      </li>
+    </ingredients>
+    <products>
+      <CC_Premium_Greenbud_Joint>2</CC_Premium_Greenbud_Joint>
+    </products>
+    <displayPriority>1402</displayPriority>
+		<skillRequirements>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+-->
+
+  <RecipeDef ParentName="CookMealFineBase">
+    <defName>CC_CookGreenbudChocolate</defName>
+    <label>cook greenbud chocolate</label>
+    <description>Cook a greenbud chocolate.</description>
+    <jobString>Cooking greenbud chocolate.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>CC_Greenbud</li>
+          </thingDefs>
+        </filter>
+        <count>1.00</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chocolate</li>
+          </thingDefs>
+        </filter>
+        <count>4.00</count>
+      </li>
+    </ingredients>
+    <products>
+      <CC_Greenbud_Chocolate>1</CC_Greenbud_Chocolate>
+    </products>
+    <displayPriority>10</displayPriority>
+  </RecipeDef>
+
+</Defs>
