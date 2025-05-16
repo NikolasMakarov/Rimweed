@@ -37,33 +37,5 @@
   </RecipeDef>
 -->
 
-  <RecipeDef ParentName="CookMealFineBase">
-    <defName>CC_CookGreenbudChocolate</defName>
-    <label>cook greenbud chocolate</label>
-    <description>Cook a greenbud chocolate.</description>
-    <jobString>Cooking greenbud chocolate.</jobString>
-    <ingredients>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>CC_Greenbud</li>
-          </thingDefs>
-        </filter>
-        <count>1.00</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>Chocolate</li>
-          </thingDefs>
-        </filter>
-        <count>4.00</count>
-      </li>
-    </ingredients>
-    <products>
-      <CC_Greenbud_Chocolate>1</CC_Greenbud_Chocolate>
-    </products>
-    <displayPriority>10</displayPriority>
-  </RecipeDef>
 
 </Defs>
