@@ -273,7 +273,7 @@
 
   <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_Premium_Greenbud_Joint</defName>
-    <label>greenbud joint</label>
+    <label>premium greenbud joint</label>
     <description>A potent herbal joint made from the refined buds of a psychoactive plant. Provides a euphoric high with a unique energetic twist, but comes with risks of addiction and mental strain.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>

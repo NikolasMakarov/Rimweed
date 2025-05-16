@@ -43,7 +43,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>CC_Jar</defName>
     <label>Jar</label>
-    <description>A plastic jar made from plastic.</description>
+    <description>A jar made from plastic.</description>
     <graphicData>
       <texPath>Things/Item/Resource/CC_Jar</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>

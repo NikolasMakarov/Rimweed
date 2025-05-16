@@ -3,10 +3,10 @@
 
 <!-- ============================== Greenbud Chocolate ============================== -->
 
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_Greenbud_Chocolate</defName>
-    <label>greenbud joint</label>
-    <description>A potent herbal joint made from the refined buds of a psychoactive plant. Provides a euphoric high with a unique energetic twist, but comes with risks of addiction and mental strain.</description>
+    <label>greenbud chocolate</label>
+    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standart recipe and gives a subtler high than a greenbud joint, but is not very nutritious</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
       <HediffDef>GreenbudHigh</HediffDef>
@@ -66,7 +66,7 @@
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>GreenbudHigh</hediffDef>
-          <severity>0.5</severity>
+          <severity>0.1</severity>
           <toleranceChemical>Greenbud</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
@@ -82,6 +82,26 @@
         </li>
       </outcomeDoers>
     </ingestible>
+     <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+         <li>ElectricStove</li>
+        <li>FueledStove</li>
+      </recipeUsers>
+      <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+      <workSkill>Cooking</workSkill>
+      <skillRequirements>
+        <Cooking>2</Cooking>
+      </skillRequirements>
+      <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1600</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Chocolate>1</Chocolate>
+      <CC_Greenbud>1</CC_Greenbud>
+    </costList>
     <comps>
       <li Class="CompProperties_Drug">
         <chemical>Greenbud</chemical>
