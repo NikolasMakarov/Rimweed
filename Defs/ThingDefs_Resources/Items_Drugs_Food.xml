@@ -6,7 +6,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_Greenbud_Chocolate</defName>
     <label>greenbud chocolate</label>
-    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standart recipe and gives a subtler high than a greenbud joint, but is not very nutritious</description>
+    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standart recipe and gives a subtler high than a greenbud joint, but is not very nutritious.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
       <HediffDef>GreenbudHigh</HediffDef>
@@ -16,11 +16,12 @@
     <graphicData>
       <texPath>Things/Item/Cooked/CC_Greenbud_chocolate</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.90</drawSize>
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
       <WorkToMake>450</WorkToMake>
-      <MarketValue>24</MarketValue>
+      <MarketValue>28</MarketValue>
       <Mass>0.05</Mass>
       <DeteriorationRate>6</DeteriorationRate>
       <Flammability>1.3</Flammability>
@@ -86,7 +87,7 @@
       <researchPrerequisite>DrugProduction</researchPrerequisite>
       <recipeUsers>
         <li>DrugLab</li>
-         <li>ElectricStove</li>
+        <li>ElectricStove</li>
         <li>FueledStove</li>
       </recipeUsers>
       <workSpeedStat>DrugCookingSpeed</workSpeedStat>
@@ -100,7 +101,122 @@
     </recipeMaker>
     <costList>
       <Chocolate>1</Chocolate>
-      <CC_Greenbud>1</CC_Greenbud>
+      <CC_THC_Greenbud>1</CC_THC_Greenbud>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Greenbud</chemical>
+        <addictiveness>0.020</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>20</listOrder>
+      </li>
+    </comps>
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
+
+<!-- ============================== Greenbud Gummies ============================== -->
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>CC_Greenbud_Gummies</defName>
+    <label>greenbud gummies</label>
+    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standart recipe and gives a subtler high than a greenbud joint, but is not very nutritious.</description>
+    <possessionCount>5</possessionCount>
+    <descriptionHyperlinks>
+      <HediffDef>GreenbudHigh</HediffDef>
+      <HediffDef>GreenbudTolerance</HediffDef>
+      <HediffDef>GreenbudAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Cooked/CC_Greenbud_gummies</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.90</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>450</WorkToMake>
+      <MarketValue>32</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Flammability>1.3</Flammability>
+      <Nutrition>0.1</Nutrition>
+    </statBases>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <foodType>Plant, Processed</foodType>
+      <joyKind>Gluttonous</joyKind>
+      <joy>0.20</joy>
+      <baseIngestTicks>720</baseIngestTicks>
+      <maxNumToIngestAtOnce>5</maxNumToIngestAtOnce>
+      <defaultNumToIngestAtOnce>5</defaultNumToIngestAtOnce>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Meal_Eat</ingestSound>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.27,0,0.08)</offset>
+          <behind>true</behind>
+        </northDefault>
+        <east>
+          <offset>(0.45,0,0.08)</offset>
+        </east>
+        <south>
+          <offset>(0.27,0,0.08)</offset>
+        </south>
+        <west>
+          <offset>(-0.50,0,0.08)</offset>
+          <flip>true</flip>
+        </west>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>true</ingestHoldUsesTable>
+      <ingestCommandString>Consume {0}</ingestCommandString>
+      <ingestReportString>Consuming {0}.</ingestReportString>
+      <ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
+      <useEatingSpeedStat>true</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>GreenbudHigh</hediffDef>
+          <severity>0.1</severity>
+          <toleranceChemical>Greenbud</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>-0.1</offset>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>GreenbudTolerance</hediffDef>
+          <toleranceChemical>Greenbud</toleranceChemical>
+          <severity>0.030</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+     <recipeMaker>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+        <li>ElectricStove</li>
+        <li>FueledStove</li>
+      </recipeUsers>
+      <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+      <workSkill>Cooking</workSkill>
+      <skillRequirements>
+        <Cooking>2</Cooking>
+      </skillRequirements>
+      <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1601</displayPriority>
+    </recipeMaker>
+    <costList>
+      <InsectJelly>1</InsectJelly>
+      <CC_THC_Greenbud>1</CC_THC_Greenbud>
     </costList>
     <comps>
       <li Class="CompProperties_Drug">

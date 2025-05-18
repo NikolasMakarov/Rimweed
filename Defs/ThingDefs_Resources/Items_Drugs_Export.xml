@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+<!-- ============================== Greenbud Bud ============================== -->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>CC_THC_Greenbud</defName>
+    <label>THC Greenbud</label>
+    <description>A small medical-grade bottle of concentrated THC oil, extracted from psychoactive plants. Commonly used as a condiment or infused into edibles. Comes with a dropper cap for precision. Store in a cool, dark place.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/CC_THC</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToMake>200</WorkToMake>
+      <MarketValue>18</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>14</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+        <li>CC_packing_station</li>
+      </recipeUsers>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <CC_Greenbud>2</CC_Greenbud>
+    </costList>
+  </ThingDef>
+
 <!-- ============================== Greenbud Jars ============================== -->
 
   <ThingDef ParentName="ResourceBase">
@@ -18,8 +66,8 @@
     </thingCategories>
     <statBases>
       <MaxHitPoints>50</MaxHitPoints>
-      <WorkToMake>20</WorkToMake>
-      <MarketValue>405</MarketValue>
+      <WorkToMake>200</WorkToMake>
+      <MarketValue>105</MarketValue>
       <Mass>0.60</Mass>
       <DeteriorationRate>1.0</DeteriorationRate>
       <Flammability>0.2</Flammability>
@@ -60,8 +108,8 @@
     </thingCategories>
     <statBases>
       <MaxHitPoints>50</MaxHitPoints>
-      <WorkToMake>20</WorkToMake>
-      <MarketValue>405</MarketValue>
+      <WorkToMake>200</WorkToMake>
+      <MarketValue>165</MarketValue>
       <Mass>0.60</Mass>
       <DeteriorationRate>1.0</DeteriorationRate>
       <Flammability>0.2</Flammability>
