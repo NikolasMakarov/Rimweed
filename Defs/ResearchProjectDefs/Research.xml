@@ -4,7 +4,7 @@
 	<ResearchProjectDef>
 		<defName>CC_GreenbudProcessing</defName>
 		<label>greenbud processing</label>
-		<tab>CC_Greenbud</tab>
+		<tab>CC_Drugs</tab>
 		<techLevel>Medieval</techLevel>
 		<description>Learn how to dry and roll psychoactive Greenbud into smokable joints. Unlocks both basic and premium joint production methods using refined materials.</description>
 		<baseCost>400</baseCost>
@@ -31,7 +31,7 @@
 	<ResearchProjectDef>
 		<defName>CC_AdvancedJointCrafting</defName>
 		<label>advanced joint crafting</label>
-		<tab>CC_Greenbud</tab>
+		<tab>CC_Drugs</tab>
 		<techLevel>Medieval</techLevel>
 		<description>Unlock the techniques to craft hybrid and infused joints—powerful blends that combine effects for specialized moods and enhanced highs.</description>
 		<baseCost>500</baseCost>
@@ -57,7 +57,7 @@
 	<ResearchProjectDef>
 		<defName>CC_EdibleTHCInfusion</defName>
 		<label>edible THC infusion</label>
-		<tab>CC_Greenbud</tab>
+		<tab>CC_Drugs</tab>
 		<techLevel>Medieval</techLevel>
 		<description>Master the art of extracting THC oil and incorporating it into edibles.</description>
 		<baseCost>800</baseCost>
