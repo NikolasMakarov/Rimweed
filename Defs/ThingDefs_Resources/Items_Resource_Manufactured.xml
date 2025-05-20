@@ -79,4 +79,87 @@
     </costList>
   </ThingDef>
 
+  <ThingDef ParentName="MedicineBase">
+    <defName>CC_Greenbud_Salve</defName>
+    <label>Greenbud Salve</label>
+    <description>A soothing topical ointment made by infusing the psychoactive compounds from greenbud into a neutral carrier like herbal paste or fat. Used for pain relief or minor wound soothing.</description>
+    <possessionCount>3</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/CC_Greenbud_Salve</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <MarketValue>18</MarketValue>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <MedicalPotency>0.80</MedicalPotency>
+      <MedicalQualityMax>1.00</MedicalQualityMax>
+      <DeteriorationRate>2</DeteriorationRate>
+      <WorkToMake>500</WorkToMake>
+    </statBases>
+    <costList>
+      <MedicineHerbal>1</MedicineHerbal>
+      <CC_Greenbud>1</CC_Greenbud>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+        <Intellectual>2</Intellectual>
+      </skillRequirements>
+      <bulkRecipeCount>4</bulkRecipeCount>
+      <displayPriority>1999</displayPriority>
+    </recipeMaker>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="MedicineBase">
+    <defName>CC_Greenbud_Pill</defName>
+    <label>greenbud pill</label>
+    <description>A natural medicinal pill made from the non-psychoactive essence of Greenbud. It delivers high healing potency, making it especially valuable when tended by less experienced doctors. Ideal for colonies with limited medical skill or resources.</description>
+    <possessionCount>3</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/CC_Greenbud_Pill</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>24</MarketValue>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <MedicalPotency>1.30</MedicalPotency>
+      <MedicalQualityMax>0.90</MedicalQualityMax>
+      <DeteriorationRate>2</DeteriorationRate>
+      <WorkToMake>500</WorkToMake>
+    </statBases>
+    <costList>
+      <Neutroamine>2</Neutroamine>
+      <CC_Greenbud>1</CC_Greenbud>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <researchPrerequisite>MedicineProduction</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+        <Intellectual>4</Intellectual>
+      </skillRequirements>
+      <bulkRecipeCount>4</bulkRecipeCount>
+      <displayPriority>1999</displayPriority>
+    </recipeMaker>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
 </Defs>

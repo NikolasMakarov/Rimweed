@@ -67,7 +67,7 @@
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>GreenbudHigh</hediffDef>
-          <severity>0.1</severity>
+          <severity>0.4</severity>
           <toleranceChemical>Greenbud</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
@@ -77,14 +77,14 @@
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>GreenbudTolerance</hediffDef>
           <toleranceChemical>Greenbud</toleranceChemical>
-          <severity>0.030</severity>
+          <severity>0.025</severity>
           <divideByBodySize>true</divideByBodySize>
           <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
         </li>
       </outcomeDoers>
     </ingestible>
      <recipeMaker>
-      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <researchPrerequisite>CC_EdibleTHCInfusion</researchPrerequisite>
       <recipeUsers>
         <li>DrugLab</li>
         <li>ElectricStove</li>
@@ -182,7 +182,7 @@
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>GreenbudHigh</hediffDef>
-          <severity>0.1</severity>
+          <severity>0.25</severity>
           <toleranceChemical>Greenbud</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
@@ -192,14 +192,14 @@
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>GreenbudTolerance</hediffDef>
           <toleranceChemical>Greenbud</toleranceChemical>
-          <severity>0.030</severity>
+          <severity>0.020</severity>
           <divideByBodySize>true</divideByBodySize>
           <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
         </li>
       </outcomeDoers>
     </ingestible>
      <recipeMaker>
-      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <researchPrerequisite>CC_EdibleTHCInfusion</researchPrerequisite>
       <recipeUsers>
         <li>DrugLab</li>
         <li>ElectricStove</li>

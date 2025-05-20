@@ -36,7 +36,7 @@
       <workSkill>Intellectual</workSkill>
       <effectWorking>Cook</effectWorking>
       <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>DrugProduction</researchPrerequisite>
+      <researchPrerequisite>CC_EdibleTHCInfusion</researchPrerequisite>
       <recipeUsers>
         <li>CraftingSpot</li>
         <li>DrugLab</li>

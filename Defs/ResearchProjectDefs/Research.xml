@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>CC_GreenbudProcessing</defName>
+		<label>greenbud processing</label>
+		<tab>CC_Greenbud</tab>
+		<techLevel>Medieval</techLevel>
+		<description>Learn how to dry and roll psychoactive Greenbud into smokable joints. Unlocks both basic and premium joint production methods using refined materials.</description>
+		<baseCost>400</baseCost>
+		<researchViewX>0</researchViewX>
+		<researchViewY>1</researchViewY>
+		<prerequisites>
+			<li>DrugProduction</li>
+		</prerequisites>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->greenbud processing</li>
+
+				<li>subject_story->discovered an ancient herb with potent effects</li>
+				<li>subject_story->perfected the art of rolling for maximum smoothness</li>
+				<li>subject_story->developed a premium strain through countless experiments</li>
+				<li>subject_story->was exiled for introducing the first psychoactive smoke</li>
+
+				<li>subject_gerund->processing greenbud</li>
+				<li>subject_gerund->rolling joints</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>CC_AdvancedJointCrafting</defName>
+		<label>advanced joint crafting</label>
+		<tab>CC_Greenbud</tab>
+		<techLevel>Medieval</techLevel>
+		<description>Unlock the techniques to craft hybrid and infused joints—powerful blends that combine effects for specialized moods and enhanced highs.</description>
+		<baseCost>500</baseCost>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+		<prerequisites>
+			<li>CC_GreenbudProcessing</li>
+		</prerequisites>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->advanced joint crafting</li>
+
+				<li>subject_story->grew unsatisfied with traditional joints and began experimenting with combinations</li>
+				<li>subject_story->used both premium and standard greenbud in pursuit of the perfect blend</li>
+				<li>subject_story->accidentally invented the infused joint by soaking bud in concentrated THC oil</li>
+				<li>subject_story->was known across the Rim as a "connoisseur chemist"</li>
+
+				<li>subject_gerund->blending, infusing, and refining joints</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>CC_EdibleTHCInfusion</defName>
+		<label>edible THC infusion</label>
+		<tab>CC_Greenbud</tab>
+		<techLevel>Medieval</techLevel>
+		<description>Master the art of extracting THC oil and incorporating it into edibles.</description>
+		<baseCost>800</baseCost>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+		<prerequisites>
+			<li>DrugProduction</li>
+		</prerequisites>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->THC edibles</li>
+
+				<li>subject_story->infused the first gummy bear with psychoactive oil</li>
+				<li>subject_story->accidentally discovered THC chocolate while baking under influence</li>
+				<li>subject_story->revolutionized medicinal cooking with herbal extracts</li>
+				<li>subject_story->was known for creating legendary chill-out snacks</li>
+
+				<li>subject_gerund->infusing treats with THC</li>
+				<li>subject_gerund->cooking enhanced edibles</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+</Defs>
