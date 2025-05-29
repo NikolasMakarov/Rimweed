@@ -25,8 +25,8 @@
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>CC_Greenbud</harvestedThingDef>
       <drugForHarvestPurposes>True</drugForHarvestPurposes>
-      <harvestYield>8</harvestYield>
-      <sowMinSkill>4</sowMinSkill>
+      <harvestYield>12</harvestYield>
+      <sowMinSkill>2</sowMinSkill>
       <sowTags>
         <li>Ground</li>
         <li>Hydroponic</li>
@@ -45,7 +45,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>CC_Greenbud</defName>
     <label>Greenbud</label>
-    <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
+    <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be sold raw or processed into joints, edibles, or extracts.</description>
     <graphicData>
       <texPath>Things/Item/Drug/CC_Greenbud</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -277,9 +277,9 @@
     <description>A refined joint rolled with potent premium greenbud. Delivers a strong calming high, boosting mood significantly while slightly impairing focus. Favored by connoisseurs for its purity and strength.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
-      <HediffDef>GreenbudHigh</HediffDef>
-      <HediffDef>GreenbudTolerance</HediffDef>
-      <HediffDef>GreenbudAddiction</HediffDef>
+      <HediffDef>GreenbudPremiumHigh</HediffDef>
+      <HediffDef>GreenbudPremiumTolerance</HediffDef>
+      <HediffDef>GreenbudPremiumAddiction</HediffDef>
       <HediffDef>Carcinoma</HediffDef>
       <HediffDef>Asthma</HediffDef>
     </descriptionHyperlinks>
@@ -329,17 +329,17 @@
       <useEatingSpeedStat>false</useEatingSpeedStat>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudHigh</hediffDef>
+          <hediffDef>GreenbudPremiumHigh</hediffDef>
           <severity>0.5</severity>
-          <toleranceChemical>Greenbud</toleranceChemical>
+          <toleranceChemical>GreenbudPremium</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
           <need>Rest</need>
           <offset>-0.1</offset>
         </li>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudTolerance</hediffDef>
-          <toleranceChemical>Greenbud</toleranceChemical>
+          <hediffDef>GreenbudPremiumTolerance</hediffDef>
+          <toleranceChemical>GreenbudPremium</toleranceChemical>
           <severity>0.030</severity>
           <divideByBodySize>true</divideByBodySize>
           <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
@@ -382,9 +382,9 @@
     <description>A carefully blended joint combining regular and premium greenbud. Offers a balanced high potent, yet smoother ideal for both relaxation and light productivity. Popular among colonists who want the best of both worlds.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
-      <HediffDef>GreenbudHigh</HediffDef>
-      <HediffDef>GreenbudTolerance</HediffDef>
-      <HediffDef>GreenbudAddiction</HediffDef>
+      <HediffDef>GreenbudPremiumHigh</HediffDef>
+      <HediffDef>GreenbudPremiumTolerance</HediffDef>
+      <HediffDef>GreenbudPremiumAddiction</HediffDef>
       <HediffDef>Carcinoma</HediffDef>
       <HediffDef>Asthma</HediffDef>
     </descriptionHyperlinks>
@@ -434,17 +434,17 @@
       <useEatingSpeedStat>false</useEatingSpeedStat>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudHigh</hediffDef>
+          <hediffDef>GreenbudPremiumHigh</hediffDef>
           <severity>0.4</severity>
-          <toleranceChemical>Greenbud</toleranceChemical>
+          <toleranceChemical>GreenbudPremium</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
           <need>Rest</need>
           <offset>-0.1</offset>
         </li>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudTolerance</hediffDef>
-          <toleranceChemical>Greenbud</toleranceChemical>
+          <hediffDef>GreenbudPremiumTolerance</hediffDef>
+          <toleranceChemical>GreenbudPremium</toleranceChemical>
           <severity>0.015</severity>
           <divideByBodySize>true</divideByBodySize>
           <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
@@ -564,7 +564,7 @@
       <workSkill>Intellectual</workSkill>
       <effectWorking>Cook</effectWorking>
       <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_GreenbudProcessing</researchPrerequisite>
+      <researchPrerequisite>CC_AdvancedJointCrafting</researchPrerequisite>
       <displayPriority>1404</displayPriority>
     </recipeMaker>
     <costList>

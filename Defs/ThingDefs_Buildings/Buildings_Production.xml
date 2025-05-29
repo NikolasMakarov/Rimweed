@@ -87,9 +87,6 @@
       </buildingTags>
       <destroySound>BuildingDestroyed_Wood_Small</destroySound>
     </building>
-    <researchPrerequisites>
-      <li>Brewing</li>
-    </researchPrerequisites>
   </ThingDef>
   
 <!-- ============================== Industrial Drying Rack ============================== -->
@@ -139,7 +136,7 @@
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <building>
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
-      <paintable>true</paintable>
+      <paintable>false</paintable>
     </building>
     <comps>
       <li Class="CompProperties_Power">
@@ -168,6 +165,7 @@
         <cancelIngredientsText>RimWeed_CancelWeedInsertion</cancelIngredientsText>
         <cancelIngredientsDesc>RimWeed_CancelWeedInsertionDesc</cancelIngredientsDesc>
         <cancelIngredientsIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</cancelIngredientsIcon>
+
         <removeProductText>RimWeed_RemoveWeed</removeProductText>
         <removeProductDesc>RimWeed_RemoveWeedDesc</removeProductDesc>
         <removeProductIcon>Things/Item/Drug/CC_Greenbud/CC_OG_kush_a</removeProductIcon>
@@ -178,13 +176,15 @@
 				<noPowerDestroysProgress>true</noPowerDestroysProgress>
 				<rareTicksToDestroy>20</rareTicksToDestroy>
 				<noPowerDestroysMessage>RimWeed_WeedSpoiled</noPowerDestroysMessage>
-      <showProgressBar>true</showProgressBar>
+        <showProgressBar>true</showProgressBar>
         <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
       </li>
-  </comps>
+    </comps>
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
     <researchPrerequisites>
       <li>DrugProduction</li>
     </researchPrerequisites>

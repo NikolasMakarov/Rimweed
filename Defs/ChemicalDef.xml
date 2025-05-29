@@ -44,7 +44,7 @@
         <li>
             <label>high on greenbud</label>
             <description>I'm, like, stoned, man.</description>
-            <baseMoodEffect>13</baseMoodEffect>
+            <baseMoodEffect>10</baseMoodEffect>
         </li>
         </stages>
     </ThoughtDef>
@@ -168,8 +168,182 @@
         <li>
             <label>greenbud withdrawal</label>
             <description>I really wish I could smoke. I feel jittery, and my gut has that anxious sensation all the time.</description>
-            <baseMoodEffect>-20</baseMoodEffect>
+            <baseMoodEffect>-15</baseMoodEffect>
         </li>
         </stages>
     </ThoughtDef>
+
+    <HediffDef>
+        <defName>GreenbudPremiumHigh</defName>
+        <label>stoned on premium greenbud</label>
+        <labelNoun>a greenbud high</labelNoun>
+        <description>Greenbud's active chemical in the bloodstream. Generates a soft feeling of fuzzy well-being and wramth inside.</description>
+        <hediffClass>Hediff_High</hediffClass>
+        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>-1.0</severityPerDay>
+            <showHoursToRecover>true</showHoursToRecover>
+        </li>
+        </comps>
+        <stages>
+            <li>
+            <hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+            <painOffset>-0.4</painOffset>
+            <capMods>
+                <li>
+                <capacity>Consciousness</capacity>
+                <offset>-0.1</offset>
+                </li>
+                <li>
+                <capacity>Moving</capacity>
+                <offset>-0.1</offset>
+                </li>
+            </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+    
+    <ThoughtDef>
+        <defName>GreenbudPremiumHigh</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>GreenbudPremiumHigh</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+        <li>
+            <label>high on premium greenbud</label>
+            <description>Is this what luxury feels like?</description>
+            <baseMoodEffect>16</baseMoodEffect>
+        </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Greenbud addiction -->
+
+    <ChemicalDef>
+        <defName>GreenbudPremium</defName>
+        <label>GreenbudPremium</label>
+        <addictionHediff>GreenbudPremiumAddiction</addictionHediff>
+        <toleranceHediff>GreenbudPremiumTolerance</toleranceHediff>
+        <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+        <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+        <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+    </ChemicalDef>
+
+    <NeedDef ParentName="DrugAddictionNeedBase">
+        <defName>Chemical_GreenbudPremium</defName>
+        <needClass>Need_Chemical</needClass>
+        <label>premium greenbud</label>
+        <description>Because of a greenbud dependence, this person needs to regularly consume the drug to avoid withdrawal symptoms. Any greenbud won't do, only the premium one.</description>
+        <listPriority>24</listPriority>
+    </NeedDef>
+    
+    <HediffDef ParentName="DrugToleranceBase">
+        <defName>GreenbudPremiumTolerance</defName>
+        <label>premium greenbud tolerance</label>
+        <description>A built-up tolerance to greenbud. The more severe this tolerance is, the more smokeleaf it takes to get the same effect.</description>
+        <comps>
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>-0.015</severityPerDay>
+        </li>
+        <li Class="HediffCompProperties_DrugEffectFactor">
+            <chemical>Greenbud</chemical>
+        </li>
+        </comps>
+        <hediffGivers>
+        <li Class="HediffGiver_RandomDrugEffect">
+            <hediff>Asthma</hediff>
+            <severityToMtbDaysCurve>
+            <points>
+                <li>(0.45, 99999)</li>
+                <li>(0.5, 180)</li>
+                <li>(1, 135)</li>
+            </points>
+            </severityToMtbDaysCurve>
+            <partsToAffect>
+            <li>Lung</li>
+            </partsToAffect>
+            <countToAffect>2</countToAffect>
+        </li>
+        <li Class="HediffGiver_RandomDrugEffect">
+            <hediff>Carcinoma</hediff>
+            <severityToMtbDaysCurve>
+            <points>
+                <li>(0.36, 99999)</li>
+                <li>(0.4, 180)</li>
+                <li>(1, 135)</li>
+            </points>
+            </severityToMtbDaysCurve>
+            <partsToAffect>
+            <li>Lung</li>
+            </partsToAffect>
+            <countToAffect>1</countToAffect>
+        </li>
+        </hediffGivers>
+    </HediffDef>
+
+    <HediffDef ParentName="AddictionBase">
+        <defName>GreenbudPremiumAddiction</defName>
+        <label>premium greenbud dependence</label>
+        <description>A chemical addiction to greenbud. Long-term use of greenbud has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+    \nWithout regular doses of greenbud, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+        <hediffClass>Hediff_Addiction</hediffClass>
+        <causesNeed>Chemical_Greenbud</causesNeed>
+        <comps>
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>-0.0333</severityPerDay>
+            <showDaysToRecover>true</showDaysToRecover>
+        </li>
+        </comps>
+        <stages>
+        <li>
+        </li>
+        <li>
+            <label>withdrawal</label>
+            <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>-0.35</offset>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <offset>-0.18</offset>
+            </li>
+            </capMods>
+            <mentalStateGivers>
+            <li>
+                <mentalState>Binging_Food</mentalState>
+                <mtbDays>20</mtbDays>
+            </li>
+            <li>
+                <mentalState>Binging_DrugMajor</mentalState>
+                <mtbDays>35</mtbDays>
+            </li>
+            </mentalStateGivers>
+        </li>
+        </stages>
+    </HediffDef>
+
+    <ThoughtDef>
+        <defName>GreenbudPremiumWithdrawal</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>GreenbudPremiumAddiction</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+        <li>
+            <visible>false</visible>
+        </li>
+        <li>
+            <label>greenbud withdrawal</label>
+            <description>I really wish I could smoke. No... only the best one....</description>
+            <baseMoodEffect>-28</baseMoodEffect>
+        </li>
+        </stages>
+    </ThoughtDef>
+    
 </Defs>

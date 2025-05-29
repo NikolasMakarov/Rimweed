@@ -6,7 +6,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_Greenbud_Chocolate</defName>
     <label>greenbud chocolate</label>
-    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standart recipe and gives a subtler high than a greenbud joint, but is not very nutritious.</description>
+    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standard recipe and gives a subtler high than a greenbud joint, but is not very nutritious.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
       <HediffDef>GreenbudHigh</HediffDef>
@@ -121,7 +121,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>CC_Greenbud_Gummies</defName>
     <label>greenbud gummies</label>
-    <description>A special chocolate made with the addition of greenbud. Fulfils more recreation than the standart recipe and gives a subtler high than a greenbud joint, but is not very nutritious.</description>
+    <description>A special jelly made with the addition of greenbud. Fulfils less recreation than the standard recipe and but can be consumed in higher ammount than a greenbud joint.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
       <HediffDef>GreenbudHigh</HediffDef>
