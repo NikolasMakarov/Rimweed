@@ -1,53 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-<!-- ============================== Greenbud Plant ============================== -->
-
-  <ThingDef ParentName="PlantBase">
-    <defName>CC_Greenbud_Plant</defName>
-    <label>greenbud plant</label>
-    <description>A hardy, fast-growing plant selectively bred for its psychoactive flowers. Prefers warm climates and fertile soil. While not as potent as synthetic drugs, its dried buds can be smoked or processed into calming edibles.</description>
-    <statBases>
-      <MaxHitPoints>85</MaxHitPoints>
-      <Nutrition>0.2</Nutrition>
-    </statBases>
-    <graphicData>
-      <texPath>Things/Plant/CC_Greenbud</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-    </graphicData>
-    <selectable>true</selectable>
-    <pathCost>14</pathCost>
-    <ingestible />
-    <plant>
-      <immatureGraphicPath>Things/Plant/CC_GreenbudImmature</immatureGraphicPath>
-      <growDays>9.00</growDays>
-      <dieIfLeafless>true</dieIfLeafless>
-      <harvestTag>Standard</harvestTag>
-      <harvestedThingDef>CC_Greenbud</harvestedThingDef>
-      <drugForHarvestPurposes>True</drugForHarvestPurposes>
-      <harvestYield>12</harvestYield>
-      <sowMinSkill>2</sowMinSkill>
-      <sowTags>
-        <li>Ground</li>
-        <li>Hydroponic</li>
-      </sowTags>
-      <topWindExposure>0.1</topWindExposure>
-      <visualSizeRange>0.5~1.0</visualSizeRange>
-      <wildOrder>2</wildOrder>
-      <pollution>Any</pollution>
-      <fertilityMin>0.50</fertilityMin>
-      <fertilitySensitivity>0.4</fertilitySensitivity>
-    </plant>
-  </ThingDef>
-
-<!-- ============================== Greenbud Bud ============================== -->
+<!-- ============================== Neutrosludge ============================== -->
 
   <ThingDef ParentName="ResourceBase">
-    <defName>CC_Greenbud</defName>
-    <label>Greenbud</label>
-    <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be sold raw or processed into joints, edibles, or extracts.</description>
+    <defName>CC_Neutrosludge</defName>
+    <label>neutrosludge</label>
+    <description>A semi-clear, chemically unstable sludge made by dissolving raw meat in chemfuel and distilling the slurry through filters. This glowing blue ooze is the base for numerous back-alley drugs. It looks unstable, like something that shouldn't be consumed... but will be anyway.</description>
     <graphicData>
-      <texPath>Things/Item/Drug/CC_Greenbud</texPath>
+      <texPath>Things/Item/Material/CC_Neutrosludge</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.95</drawSize>
     </graphicData>
@@ -57,6 +18,7 @@
     </thingCategories>
     <statBases>
       <MaxHitPoints>50</MaxHitPoints>
+      <WorkToMake>60</WorkToMake>
       <MarketValue>8</MarketValue>
       <Mass>0.05</Mass>
       <DeteriorationRate>1.0</DeteriorationRate>
@@ -64,524 +26,180 @@
     </statBases>
   </ThingDef>
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>CC_Greenbud_Packed</defName>
-    <label>Premium Greenbud</label>
-    <description>A carefully selected top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
-    <graphicData>
-      <texPath>Things/Item/Drug/CC_Greenbud_packed</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-      <drawSize>0.95</drawSize>
-    </graphicData>
-    <healthAffectsPrice>false</healthAffectsPrice>
-    <thingCategories>
-      <li>Manufactured</li>
-    </thingCategories>
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <WorkToMake>60</WorkToMake>
-      <MarketValue>40</MarketValue>
-      <Mass>0.05</Mass>
-      <DeteriorationRate>1.0</DeteriorationRate>
-      <Flammability>0.2</Flammability>
-    </statBases>
-    <recipeMaker>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_GreenbudProcessing</researchPrerequisite>
-      <recipeUsers>
-        <li>CraftingSpot</li>
-        <li>DrugLab</li>
-        <li>CC_packing_station</li>
-      </recipeUsers>
-      <bulkRecipeCount>4</bulkRecipeCount>
-    </recipeMaker>
-    <costList>
-      <CC_Greenbud>4</CC_Greenbud>
-      <CC_Plastic_Pack>1</CC_Plastic_Pack>
-    </costList>
-  </ThingDef>
-
-  <ThingDef ParentName="ResourceBase">
-    <defName>CC_dried_Greenbud</defName>
-    <label>Dried Greenbud</label>
-    <description>The flowering tops of the greenbud plant. Mildly psychoactive when smoked or consumed, greenbud improves mood and reduces stress, but may impair movement and focus. Can be used raw or processed into joints, edibles, or extracts.</description>
-    <graphicData>
-      <texPath>Things/Item/Drug/CC_dried_Greenbud</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-      <drawSize>0.95</drawSize>
-    </graphicData>
-    <healthAffectsPrice>false</healthAffectsPrice>
-    <thingCategories>
-      <li>Manufactured</li>
-    </thingCategories>
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <MarketValue>12</MarketValue>
-      <Mass>0.05</Mass>
-      <DeteriorationRate>1.0</DeteriorationRate>
-      <Flammability>0.2</Flammability>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="ResourceBase">
-    <defName>CC_dried_Greenbud_Packed</defName>
-    <label>Dried Premium Greenbud</label>
-    <description>A carefully selected and expertly cured top-shelf variant of greenbud. Potent, smooth, and highly psychoactive, it delivers a stronger mood lift and deeper relaxation than standard buds. Favored by connoisseurs, it significantly reduces stress but can cause noticeable lethargy and impaired focus. Best enjoyed rolled or infused in luxury edibles and extracts.</description>
-    <graphicData>
-      <texPath>Things/Item/Drug/CC_dried_Greenbud_packed</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-      <drawSize>0.95</drawSize>
-    </graphicData>
-    <healthAffectsPrice>false</healthAffectsPrice>
-    <thingCategories>
-      <li>Manufactured</li>
-    </thingCategories>
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <WorkToMake>60</WorkToMake>
-      <MarketValue>58</MarketValue>
-      <Mass>0.05</Mass>
-      <DeteriorationRate>1.0</DeteriorationRate>
-      <Flammability>0.2</Flammability>
-    </statBases>
-    <recipeMaker>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_GreenbudProcessing</researchPrerequisite>
-      <recipeUsers>
-        <li>CraftingSpot</li>
-        <li>DrugLab</li>
-        <li>CC_packing_station</li>
-      </recipeUsers>
-      <bulkRecipeCount>4</bulkRecipeCount>
-    </recipeMaker>
-    <costList>
-      <CC_dried_Greenbud>4</CC_dried_Greenbud>
-      <CC_Plastic_Pack>1</CC_Plastic_Pack>
-    </costList>
-  </ThingDef>
-
-<!-- ============================== Greenbud Joint ============================== -->
+<!-- ============================== Neurodust ============================== -->
 
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>CC_Greenbud_Joint</defName>
-    <label>greenbud joint</label>
-    <description>A potent herbal joint made from the refined buds of a psychoactive plant. Provides a euphoric high with a unique energetic twist, but comes with risks of addiction and mental strain.</description>
+    <defName>CC_Neurodust</defName>
+    <label>neurodust</label>
+    <description>A fine, glittering blue powder snorted for a potent burst of speed and focus. Favored by raiders and desperate workers alike, Neurodust floods the brain with synthetic neurotransmitters—until it burns out the pathways it hijacks. Highly addictive, often deadly in high doses. Users call it “lightning for the soul.”</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
-      <HediffDef>GreenbudHigh</HediffDef>
-      <HediffDef>GreenbudTolerance</HediffDef>
-      <HediffDef>GreenbudAddiction</HediffDef>
-      <HediffDef>Carcinoma</HediffDef>
-      <HediffDef>Asthma</HediffDef>
+      <HediffDef>NeurodustHigh</HediffDef>
+      <HediffDef>NeurodustTolerance</HediffDef>
+      <HediffDef>NeurodustAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
     </descriptionHyperlinks>
     <graphicData>
-      <texPath>Things/Item/Drug/CC_Greenbud_joint</texPath>
+      <texPath>Things/Item/Drug/CC_Neurodust</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.75</drawSize>
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <WorkToMake>450</WorkToMake>
-      <MarketValue>35</MarketValue>
+      <WorkToMake>350</WorkToMake>
+      <MarketValue>20</MarketValue>
       <Mass>0.05</Mass>
-      <DeteriorationRate>6</DeteriorationRate>
-      <Flammability>1.3</Flammability>
     </statBases>
-    <techLevel>Neolithic</techLevel>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
     <ingestible>
-      <foodType>Plant, Processed</foodType>
+      <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
-      <joy>0.40</joy>
-      <baseIngestTicks>720</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Joint</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <joy>0.20</joy>
+      <drugCategory>Hard</drugCategory>
+      <baseIngestTicks>150</baseIngestTicks>
+      <ingestSound>Ingest_Snort</ingestSound>
       <ingestHoldOffsetStanding>
         <northDefault>
-          <offset>(0.27,0,0.08)</offset>
-          <behind>true</behind>
+          <offset>(0.21,0,0.05)</offset>
         </northDefault>
-        <east>
-          <offset>(0.45,0,0.08)</offset>
-        </east>
-        <south>
-          <offset>(0.27,0,0.08)</offset>
-        </south>
-        <west>
-          <offset>(-0.50,0,0.08)</offset>
-          <flip>true</flip>
-        </west>
       </ingestHoldOffsetStanding>
       <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
+      <ingestCommandString>Snort {0}</ingestCommandString>
+      <ingestReportString>Snorting {0}.</ingestReportString>
       <useEatingSpeedStat>false</useEatingSpeedStat>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudHigh</hediffDef>
-          <severity>0.3</severity>
-          <toleranceChemical>Greenbud</toleranceChemical>
+          <hediffDef>NeurodustHigh</hediffDef>
+          <severity>0.80</severity>
+          <toleranceChemical>Neurodust</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
           <need>Rest</need>
-          <offset>-0.1</offset>
+          <offset>0.2</offset>
+          <toleranceChemical>Neurodust</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudTolerance</hediffDef>
-          <toleranceChemical>Greenbud</toleranceChemical>
-          <severity>0.015</severity>
+          <hediffDef>NeurodustTolerance</hediffDef>
+          <toleranceChemical>Neurodust</toleranceChemical>
+          <severity>0.040</severity>
           <divideByBodySize>true</divideByBodySize>
           <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
         </li>
       </outcomeDoers>
     </ingestible>
     <recipeMaker>
+      <researchPrerequisite>PsychiteRefining</researchPrerequisite>
       <recipeUsers>
-        <li>CraftingSpot</li>
         <li>DrugLab</li>
       </recipeUsers>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_GreenbudProcessing</researchPrerequisite>
-      <displayPriority>1401</displayPriority>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>101</displayPriority>
     </recipeMaker>
     <costList>
-      <CC_dried_Greenbud>2</CC_dried_Greenbud>
+      <CC_Neutrosludge>8</CC_Neutrosludge>
     </costList>
     <comps>
       <li Class="CompProperties_Drug">
-        <chemical>Greenbud</chemical>
-        <addictiveness>0.020</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
+        <chemical>Neurodust</chemical>
+        <addictiveness>0.01</addictiveness>
+        <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>20</listOrder>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>100</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.01</largeOverdoseChance>
       </li>
     </comps>
-    <allowedArchonexusCount>50</allowedArchonexusCount>
+    <allowedArchonexusCount>200</allowedArchonexusCount>
   </ThingDef>
 
+<!-- ============================== Brainstem ============================== -->
+
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>CC_Premium_Greenbud_Joint</defName>
-    <label>premium greenbud joint</label>
-    <description>A refined joint rolled with potent premium greenbud. Delivers a strong calming high, boosting mood significantly while slightly impairing focus. Favored by connoisseurs for its purity and strength.</description>
+    <defName>CC_Brainstem</defName>
+    <label>brainstem</label>
+    <description>A delicate injector preloaded with deep-blue cerebrofluid, containing synthetic glial threads and consciousness amplifiers. Brainstem boosts focus dramatically—but at a cost. The serum inflames neural tissue, reducing cognition over time. Developed for elite psycasters; repurposed by everyone else.</description>
     <possessionCount>5</possessionCount>
     <descriptionHyperlinks>
-      <HediffDef>GreenbudPremiumHigh</HediffDef>
-      <HediffDef>GreenbudPremiumTolerance</HediffDef>
-      <HediffDef>GreenbudPremiumAddiction</HediffDef>
-      <HediffDef>Carcinoma</HediffDef>
-      <HediffDef>Asthma</HediffDef>
+      <HediffDef>BrainstemHigh</HediffDef>
+      <HediffDef>BrainstemTolerance</HediffDef>
+      <HediffDef>BrainstemAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
     </descriptionHyperlinks>
     <graphicData>
-      <texPath>Things/Item/Drug/CC_premium_Greenbud_joint</texPath>
+      <texPath>Things/Item/Drug/CC_Brainstem</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.75</drawSize>
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <WorkToMake>450</WorkToMake>
-      <MarketValue>65</MarketValue>
+      <WorkToMake>350</WorkToMake>
+      <MarketValue>20</MarketValue>
       <Mass>0.05</Mass>
-      <DeteriorationRate>6</DeteriorationRate>
-      <Flammability>1.3</Flammability>
     </statBases>
-    <techLevel>Neolithic</techLevel>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
     <ingestible>
-      <foodType>Plant, Processed</foodType>
       <joyKind>Chemical</joyKind>
-      <joy>0.80</joy>
-      <baseIngestTicks>720</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Joint</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <joy>0.20</joy>
+      <drugCategory>Hard</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
       <ingestHoldOffsetStanding>
         <northDefault>
-          <offset>(0.27,0,0.08)</offset>
-          <behind>true</behind>
+          <offset>(0.18,0,0)</offset>
         </northDefault>
-        <east>
-          <offset>(0.45,0,0.08)</offset>
-        </east>
-        <south>
-          <offset>(0.27,0,0.08)</offset>
-        </south>
-        <west>
-          <offset>(-0.50,0,0.08)</offset>
-          <flip>true</flip>
-        </west>
       </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
       <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudPremiumHigh</hediffDef>
-          <severity>0.5</severity>
-          <toleranceChemical>GreenbudPremium</toleranceChemical>
+          <hediffDef>BrainstemHigh</hediffDef>
+          <severity>0.92</severity>
+          <toleranceChemical>Brainstem</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
           <need>Rest</need>
-          <offset>-0.1</offset>
+          <offset>0.4</offset>
+          <toleranceChemical>Brainstem</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudPremiumTolerance</hediffDef>
-          <toleranceChemical>GreenbudPremium</toleranceChemical>
-          <severity>0.030</severity>
+          <hediffDef>BrainstemTolerance</hediffDef>
+          <toleranceChemical>Brainstem</toleranceChemical>
+          <severity>0.040</severity>
           <divideByBodySize>true</divideByBodySize>
           <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
         </li>
       </outcomeDoers>
     </ingestible>
     <recipeMaker>
+      <researchPrerequisite>PsychiteRefining</researchPrerequisite>
       <recipeUsers>
-        <li>CraftingSpot</li>
         <li>DrugLab</li>
       </recipeUsers>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_GreenbudProcessing</researchPrerequisite>
-      <displayPriority>1402</displayPriority>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>102</displayPriority>
     </recipeMaker>
     <costList>
-      <CC_dried_Greenbud_Packed>1</CC_dried_Greenbud_Packed>
+      <PsychoidLeaves>2</PsychoidLeaves>
+      <CC_Neutrosludge>2</CC_Neutrosludge>
     </costList>
     <comps>
       <li Class="CompProperties_Drug">
-        <chemical>Greenbud</chemical>
-        <addictiveness>0.020</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
+        <chemical>Brainstem</chemical>
+        <addictiveness>0.01</addictiveness>
+        <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>20</listOrder>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>100</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.01</largeOverdoseChance>
       </li>
     </comps>
-    <allowedArchonexusCount>50</allowedArchonexusCount>
+    <allowedArchonexusCount>200</allowedArchonexusCount>
   </ThingDef>
-
-<!-- ============================== ++ Greenbud Joint ++ ============================== -->
-
-  <ThingDef ParentName="MakeableDrugBase">
-    <defName>CC_Hybrid_Greenbud_Joint</defName>
-    <label>hybrid greenbud joint</label>
-    <description>A carefully blended joint combining regular and premium greenbud. Offers a balanced high potent, yet smoother ideal for both relaxation and light productivity. Popular among colonists who want the best of both worlds.</description>
-    <possessionCount>5</possessionCount>
-    <descriptionHyperlinks>
-      <HediffDef>GreenbudPremiumHigh</HediffDef>
-      <HediffDef>GreenbudPremiumTolerance</HediffDef>
-      <HediffDef>GreenbudPremiumAddiction</HediffDef>
-      <HediffDef>Carcinoma</HediffDef>
-      <HediffDef>Asthma</HediffDef>
-    </descriptionHyperlinks>
-    <graphicData>
-      <texPath>Things/Item/Drug/CC_hybrid_Greenbud_joint</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <statBases>
-      <WorkToMake>450</WorkToMake>
-      <MarketValue>85</MarketValue>
-      <Mass>0.05</Mass>
-      <DeteriorationRate>6</DeteriorationRate>
-      <Flammability>1.3</Flammability>
-    </statBases>
-    <techLevel>Neolithic</techLevel>
-    <ingestible>
-      <foodType>Plant, Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.70</joy>
-      <baseIngestTicks>720</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Joint</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.27,0,0.08)</offset>
-          <behind>true</behind>
-        </northDefault>
-        <east>
-          <offset>(0.45,0,0.08)</offset>
-        </east>
-        <south>
-          <offset>(0.27,0,0.08)</offset>
-        </south>
-        <west>
-          <offset>(-0.50,0,0.08)</offset>
-          <flip>true</flip>
-        </west>
-      </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudPremiumHigh</hediffDef>
-          <severity>0.4</severity>
-          <toleranceChemical>GreenbudPremium</toleranceChemical>
-        </li>
-        <li Class="IngestionOutcomeDoer_OffsetNeed">
-          <need>Rest</need>
-          <offset>-0.1</offset>
-        </li>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudPremiumTolerance</hediffDef>
-          <toleranceChemical>GreenbudPremium</toleranceChemical>
-          <severity>0.015</severity>
-          <divideByBodySize>true</divideByBodySize>
-          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
-        </li>
-      </outcomeDoers>
-    </ingestible>
-    <recipeMaker>
-      <recipeUsers>
-        <li>CraftingSpot</li>
-        <li>DrugLab</li>
-      </recipeUsers>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_AdvancedJointCrafting</researchPrerequisite>
-      <displayPriority>1403</displayPriority>
-    </recipeMaker>
-    <costList>
-      <CC_dried_Greenbud_Packed>1</CC_dried_Greenbud_Packed>
-      <CC_dried_Greenbud>1</CC_dried_Greenbud>
-    </costList>
-    <comps>
-      <li Class="CompProperties_Drug">
-        <chemical>Greenbud</chemical>
-        <addictiveness>0.020</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
-        <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>20</listOrder>
-      </li>
-    </comps>
-    <allowedArchonexusCount>50</allowedArchonexusCount>
-  </ThingDef>
-
-  <ThingDef ParentName="MakeableDrugBase">
-    <defName>CC_Infused_Greenbud_Joint</defName>
-    <label>infused greenbud joint</label>
-    <description>A potent herbal joint made from the refined buds of a psychoactive plant. Provides a euphoric high with a unique energetic twist, but comes with risks of addiction and mental strain.</description>
-    <possessionCount>5</possessionCount>
-    <descriptionHyperlinks>
-      <HediffDef>GreenbudHigh</HediffDef>
-      <HediffDef>GreenbudTolerance</HediffDef>
-      <HediffDef>GreenbudAddiction</HediffDef>
-      <HediffDef>Carcinoma</HediffDef>
-      <HediffDef>Asthma</HediffDef>
-    </descriptionHyperlinks>
-    <graphicData>
-      <texPath>Things/Item/Drug/CC_infused_Greenbud_Joint</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <statBases>
-      <WorkToMake>450</WorkToMake>
-      <MarketValue>55</MarketValue>
-      <Mass>0.05</Mass>
-      <DeteriorationRate>6</DeteriorationRate>
-      <Flammability>1.3</Flammability>
-    </statBases>
-    <techLevel>Neolithic</techLevel>
-    <ingestible>
-      <foodType>Plant, Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.55</joy>
-      <baseIngestTicks>720</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Joint</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.27,0,0.08)</offset>
-          <behind>true</behind>
-        </northDefault>
-        <east>
-          <offset>(0.45,0,0.08)</offset>
-        </east>
-        <south>
-          <offset>(0.27,0,0.08)</offset>
-        </south>
-        <west>
-          <offset>(-0.50,0,0.08)</offset>
-          <flip>true</flip>
-        </west>
-      </ingestHoldOffsetStanding>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Smoke {0}</ingestCommandString>
-      <ingestReportString>Smoking {0}.</ingestReportString>
-      <ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudHigh</hediffDef>
-          <severity>0.4</severity>
-          <toleranceChemical>Greenbud</toleranceChemical>
-        </li>
-        <li Class="IngestionOutcomeDoer_OffsetNeed">
-          <need>Rest</need>
-          <offset>-0.1</offset>
-        </li>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>GreenbudTolerance</hediffDef>
-          <toleranceChemical>Greenbud</toleranceChemical>
-          <severity>0.020</severity>
-          <divideByBodySize>true</divideByBodySize>
-          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
-        </li>
-      </outcomeDoers>
-    </ingestible>
-    <recipeMaker>
-      <recipeUsers>
-        <li>CraftingSpot</li>
-        <li>DrugLab</li>
-      </recipeUsers>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-      <workSkill>Intellectual</workSkill>
-      <effectWorking>Cook</effectWorking>
-      <soundWorking>Recipe_CookMeal</soundWorking>
-      <researchPrerequisite>CC_AdvancedJointCrafting</researchPrerequisite>
-      <displayPriority>1404</displayPriority>
-    </recipeMaker>
-    <costList>
-      <CC_dried_Greenbud>2</CC_dried_Greenbud>
-      <CC_THC_Greenbud>1</CC_THC_Greenbud>
-    </costList>
-    <comps>
-      <li Class="CompProperties_Drug">
-        <chemical>Greenbud</chemical>
-        <addictiveness>0.020</addictiveness>
-        <minToleranceToAddict>0.15</minToleranceToAddict>
-        <existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
-        <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>20</listOrder>
-      </li>
-    </comps>
-    <allowedArchonexusCount>50</allowedArchonexusCount>
-  </ThingDef>
-
 </Defs>

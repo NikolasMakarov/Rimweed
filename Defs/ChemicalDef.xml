@@ -1,349 +1,487 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <HediffDef>
-        <defName>GreenbudHigh</defName>
-        <label>stoned on greenbud</label>
-        <labelNoun>a greenbud high</labelNoun>
-        <description>Greenbud's active chemical in the bloodstream. Generates a soft feeling of fuzzy well-being.</description>
-        <hediffClass>Hediff_High</hediffClass>
-        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-        <scenarioCanAdd>true</scenarioCanAdd>
-        <maxSeverity>1.0</maxSeverity>
-        <isBad>false</isBad>
-        <comps>
-        <li Class="HediffCompProperties_SeverityPerDay">
-            <severityPerDay>-1.0</severityPerDay>
-            <showHoursToRecover>true</showHoursToRecover>
-        </li>
-        </comps>
-        <stages>
-            <li>
-            <hungerRateFactorOffset>0.3</hungerRateFactorOffset>
-            <painOffset>-0.2</painOffset>
+
+<!-- ============================== Neurodust High ============================== -->
+
+  <HediffDef>
+    <defName>NeurodustHigh</defName>
+    <label>high on nurodust</label>
+    <labelNoun>a nurodust high</labelNoun>
+    <description>Active nurodust in the bloodstream. Generates an intense euphoric high.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <label>crash</label>
+          <painFactor>0.9</painFactor>
+          <socialFightChanceFactor>1.5</socialFightChanceFactor>
             <capMods>
-                <li>
-                <capacity>Consciousness</capacity>
-                <offset>-0.3</offset>
-                </li>
-                <li>
-                <capacity>Moving</capacity>
-                <offset>-0.1</offset>
-                </li>
-            </capMods>
-            </li>
-        </stages>
-    </HediffDef>
-    
-    <ThoughtDef>
-        <defName>GreenbudHigh</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>GreenbudHigh</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-        <li>
-            <label>high on greenbud</label>
-            <description>I'm, like, stoned, man.</description>
-            <baseMoodEffect>10</baseMoodEffect>
-        </li>
-        </stages>
-    </ThoughtDef>
-
-    <!-- Greenbud addiction -->
-
-    <ChemicalDef>
-        <defName>Greenbud</defName>
-        <label>Greenbud</label>
-        <addictionHediff>GreenbudAddiction</addictionHediff>
-        <toleranceHediff>GreenbudTolerance</toleranceHediff>
-        <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
-        <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
-        <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
-    </ChemicalDef>
-
-    <NeedDef ParentName="DrugAddictionNeedBase">
-        <defName>Chemical_Greenbud</defName>
-        <needClass>Need_Chemical</needClass>
-        <label>greenbud</label>
-        <description>Because of a greenbud dependence, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-        <listPriority>25</listPriority>
-    </NeedDef>
-    
-    <HediffDef ParentName="DrugToleranceBase">
-        <defName>GreenbudTolerance</defName>
-        <label>greenbud tolerance</label>
-        <description>A built-up tolerance to greenbud. The more severe this tolerance is, the more smokeleaf it takes to get the same effect.</description>
-        <comps>
-        <li Class="HediffCompProperties_SeverityPerDay">
-            <severityPerDay>-0.015</severityPerDay>
-        </li>
-        <li Class="HediffCompProperties_DrugEffectFactor">
-            <chemical>Greenbud</chemical>
-        </li>
-        </comps>
-        <hediffGivers>
-        <li Class="HediffGiver_RandomDrugEffect">
-            <hediff>Asthma</hediff>
-            <severityToMtbDaysCurve>
-            <points>
-                <li>(0.45, 99999)</li>
-                <li>(0.5, 180)</li>
-                <li>(1, 135)</li>
-            </points>
-            </severityToMtbDaysCurve>
-            <partsToAffect>
-            <li>Lung</li>
-            </partsToAffect>
-            <countToAffect>2</countToAffect>
-        </li>
-        <li Class="HediffGiver_RandomDrugEffect">
-            <hediff>Carcinoma</hediff>
-            <severityToMtbDaysCurve>
-            <points>
-                <li>(0.36, 99999)</li>
-                <li>(0.4, 180)</li>
-                <li>(1, 135)</li>
-            </points>
-            </severityToMtbDaysCurve>
-            <partsToAffect>
-            <li>Lung</li>
-            </partsToAffect>
-            <countToAffect>1</countToAffect>
-        </li>
-        </hediffGivers>
-    </HediffDef>
-
-    <HediffDef ParentName="AddictionBase">
-        <defName>GreenbudAddiction</defName>
-        <label>greenbud dependence</label>
-        <description>A chemical addiction to greenbud. Long-term use of greenbud has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
-    \nWithout regular doses of greenbud, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
-        <hediffClass>Hediff_Addiction</hediffClass>
-        <causesNeed>Chemical_Greenbud</causesNeed>
-        <comps>
-        <li Class="HediffCompProperties_SeverityPerDay">
-            <severityPerDay>-0.0333</severityPerDay>
-            <showDaysToRecover>true</showDaysToRecover>
-        </li>
-        </comps>
-        <stages>
-        <li>
-        </li>
-        <li>
-            <label>withdrawal</label>
-            <capMods>
-            <li>
-                <capacity>Consciousness</capacity>
+              <li>
+                <capacity>Manipulation</capacity>
+                <offset>-0.10</offset>
+              </li>
+              <li>
+                <capacity>Sight</capacity>
                 <offset>-0.20</offset>
-            </li>
-            <li>
-                <capacity>Moving</capacity>
-                <offset>-0.15</offset>
-            </li>
-            </capMods>
-            <mentalStateGivers>
-            <li>
-                <mentalState>Binging_Food</mentalState>
-                <mtbDays>30</mtbDays>
-            </li>
-            <li>
-                <mentalState>Binging_DrugMajor</mentalState>
-                <mtbDays>50</mtbDays>
-            </li>
-            </mentalStateGivers>
-        </li>
-        </stages>
-    </HediffDef>
-
-    <ThoughtDef>
-        <defName>GreenbudWithdrawal</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>GreenbudAddiction</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-        <li>
-            <visible>false</visible>
-        </li>
-        <li>
-            <label>greenbud withdrawal</label>
-            <description>I really wish I could smoke. I feel jittery, and my gut has that anxious sensation all the time.</description>
-            <baseMoodEffect>-15</baseMoodEffect>
-        </li>
-        </stages>
-    </ThoughtDef>
-
-    <HediffDef>
-        <defName>GreenbudPremiumHigh</defName>
-        <label>stoned on premium greenbud</label>
-        <labelNoun>a greenbud high</labelNoun>
-        <description>Greenbud's active chemical in the bloodstream. Generates a soft feeling of fuzzy well-being and wramth inside.</description>
-        <hediffClass>Hediff_High</hediffClass>
-        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-        <scenarioCanAdd>true</scenarioCanAdd>
-        <maxSeverity>1.0</maxSeverity>
-        <isBad>false</isBad>
-        <comps>
-        <li Class="HediffCompProperties_SeverityPerDay">
-            <severityPerDay>-1.0</severityPerDay>
-            <showHoursToRecover>true</showHoursToRecover>
-        </li>
-        </comps>
-        <stages>
-            <li>
-            <hungerRateFactorOffset>0.3</hungerRateFactorOffset>
-            <painOffset>-0.4</painOffset>
-            <capMods>
-                <li>
+              </li>
+              <li>
                 <capacity>Consciousness</capacity>
-                <offset>-0.1</offset>
-                </li>
-                <li>
+                <offset>-0.10</offset>
+              </li>
+              <li>
                 <capacity>Moving</capacity>
-                <offset>-0.1</offset>
-                </li>
+                <offset>-0.20</offset>
+              </li>
             </capMods>
+          <hediffGivers>
+            <li Class="HediffGiver_Random">
+              <hediff>ChemicalDamageModerate</hediff>
+              <mtbDays>10</mtbDays>
+              <partsToAffect>
+                <li>Brain</li>
+              </partsToAffect>
             </li>
-        </stages>
-    </HediffDef>
-    
-    <ThoughtDef>
-        <defName>GreenbudPremiumHigh</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>GreenbudPremiumHigh</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-        <li>
-            <label>high on premium greenbud</label>
-            <description>Is this what luxury feels like?</description>
-            <baseMoodEffect>16</baseMoodEffect>
-        </li>
-        </stages>
-    </ThoughtDef>
-
-    <!-- Greenbud addiction -->
-
-    <ChemicalDef>
-        <defName>GreenbudPremium</defName>
-        <label>GreenbudPremium</label>
-        <addictionHediff>GreenbudPremiumAddiction</addictionHediff>
-        <toleranceHediff>GreenbudPremiumTolerance</toleranceHediff>
-        <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
-        <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
-        <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
-    </ChemicalDef>
-
-    <NeedDef ParentName="DrugAddictionNeedBase">
-        <defName>Chemical_GreenbudPremium</defName>
-        <needClass>Need_Chemical</needClass>
-        <label>premium greenbud</label>
-        <description>Because of a greenbud dependence, this person needs to regularly consume the drug to avoid withdrawal symptoms. Any greenbud won't do, only the premium one.</description>
-        <listPriority>24</listPriority>
-    </NeedDef>
-    
-    <HediffDef ParentName="DrugToleranceBase">
-        <defName>GreenbudPremiumTolerance</defName>
-        <label>premium greenbud tolerance</label>
-        <description>A built-up tolerance to greenbud. The more severe this tolerance is, the more smokeleaf it takes to get the same effect.</description>
-        <comps>
-        <li Class="HediffCompProperties_SeverityPerDay">
-            <severityPerDay>-0.015</severityPerDay>
-        </li>
-        <li Class="HediffCompProperties_DrugEffectFactor">
-            <chemical>Greenbud</chemical>
-        </li>
-        </comps>
-        <hediffGivers>
-        <li Class="HediffGiver_RandomDrugEffect">
-            <hediff>Asthma</hediff>
-            <severityToMtbDaysCurve>
-            <points>
-                <li>(0.45, 99999)</li>
-                <li>(0.5, 180)</li>
-                <li>(1, 135)</li>
-            </points>
-            </severityToMtbDaysCurve>
-            <partsToAffect>
-            <li>Lung</li>
-            </partsToAffect>
-            <countToAffect>2</countToAffect>
-        </li>
-        <li Class="HediffGiver_RandomDrugEffect">
-            <hediff>Carcinoma</hediff>
-            <severityToMtbDaysCurve>
-            <points>
-                <li>(0.36, 99999)</li>
-                <li>(0.4, 180)</li>
-                <li>(1, 135)</li>
-            </points>
-            </severityToMtbDaysCurve>
-            <partsToAffect>
-            <li>Lung</li>
-            </partsToAffect>
-            <countToAffect>1</countToAffect>
-        </li>
-        </hediffGivers>
-    </HediffDef>
-
-    <HediffDef ParentName="AddictionBase">
-        <defName>GreenbudPremiumAddiction</defName>
-        <label>premium greenbud dependence</label>
-        <description>A chemical addiction to greenbud. Long-term use of greenbud has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
-    \nWithout regular doses of greenbud, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
-        <hediffClass>Hediff_Addiction</hediffClass>
-        <causesNeed>Chemical_Greenbud</causesNeed>
-        <comps>
-        <li Class="HediffCompProperties_SeverityPerDay">
-            <severityPerDay>-0.0333</severityPerDay>
-            <showDaysToRecover>true</showDaysToRecover>
-        </li>
-        </comps>
-        <stages>
-        <li>
+          </hediffGivers>
         </li>
         <li>
-            <label>withdrawal</label>
+          <minSeverity>0.25</minSeverity>
+          <label>active</label>
+          <painFactor>0.8</painFactor>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.20</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-0.20</offset>
+            </li>
+          </capMods>
+        </li>
+        <li>
+          <minSeverity>0.85</minSeverity>
+          <label>overload</label>
+          <painFactor>0.5</painFactor>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.10</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.10</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>NeurodustHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>NeurodustHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>crashed from nurodust</label>
+        <description>The world slowed down too much…</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+      <li>
+        <label>high on nurodust</label>
+        <description>Everything feels sharp and electric!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+      <li>
+        <label>overload on nurodust</label>
+        <description>I am the storm that is approaching...</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <!-- Neurodust addiction -->
+
+  <ChemicalDef>
+    <defName>Neurodust</defName>
+    <label>neurodust</label>
+    <addictionHediff>NeurodustAddiction</addictionHediff>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_Neurodust</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>neurodust</label>
+    <description>Because of a neurodust addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <fallPerDay>0.333</fallPerDay>
+    <listPriority>45</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>NeurodustAddiction</defName>
+    <label>neurodust addiction</label>
+    <description>A chemical addiction to neurodust. Long-term presence of neurodust has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of neurodust, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>Chemical_Neurodust</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.045</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+        <painFactor>3</painFactor>
+        <hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.40</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Binging_DrugExtreme</mentalState>
+            <mtbDays>40</mtbDays>
+          </li>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>10</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>NeurodustWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>NeurodustAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>neurodust withdrawal</label>
+        <description>I need that lightning powder again… everything feels dull.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>NeurodustTolerance</defName>
+    <label>neurodust tolerance</label>
+    <description>A built-up tolerance to neurodust. The more severe this tolerance is, the more neurodust it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>Neurodust</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageModerate</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 120)</li>
+            <li>(1, 90)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Brain</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+<!-- ============================== Brainstem High ============================== -->
+
+  <HediffDef>
+    <defName>BrainstemHigh</defName>
+    <label>high on brainstem</label>
+    <labelNoun>a brainstem high</labelNoun>
+    <description>Active Brainstem compound in the bloodstream. Consciousness amplified. Neural activity elevated beyond normal thresholds.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <label>recover</label>
             <capMods>
-            <li>
+              <li>
                 <capacity>Consciousness</capacity>
-                <offset>-0.35</offset>
-            </li>
-            <li>
-                <capacity>Moving</capacity>
-                <offset>-0.18</offset>
-            </li>
+                <offset>-0.10</offset>
+              </li>
             </capMods>
-            <mentalStateGivers>
-            <li>
-                <mentalState>Binging_Food</mentalState>
-                <mtbDays>20</mtbDays>
+          <hediffGivers>
+            <li Class="HediffGiver_Random">
+              <hediff>ChemicalDamageModerate</hediff>
+              <mtbDays>10</mtbDays>
+              <partsToAffect>
+                <li>Brain</li>
+              </partsToAffect>
             </li>
-            <li>
-                <mentalState>Binging_DrugMajor</mentalState>
-                <mtbDays>35</mtbDays>
-            </li>
-            </mentalStateGivers>
+          </hediffGivers>
         </li>
-        </stages>
-    </HediffDef>
+        <li>
+          <minSeverity>0.25</minSeverity>
+          <label>crash</label>
+          <painFactor>0.9</painFactor>
+          <socialFightChanceFactor>1.5</socialFightChanceFactor>
+            <capMods>
+              <li>
+                <capacity>Manipulation</capacity>
+                <offset>-0.10</offset>
+              </li>
+              <li>
+                <capacity>Sight</capacity>
+                <offset>-0.20</offset>
+              </li>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>-0.30</offset>
+              </li>
+            </capMods>
+          <hediffGivers>
+            <li Class="HediffGiver_Random">
+              <hediff>ChemicalDamageModerate</hediff>
+              <mtbDays>10</mtbDays>
+              <partsToAffect>
+                <li>Brain</li>
+              </partsToAffect>
+            </li>
+          </hediffGivers>
+        </li>
+        <li>
+          <minSeverity>0.55</minSeverity>
+          <label>active</label>
+          <painFactor>0.8</painFactor>
+          <capMods>
+             <li>
+               <capacity>Manipulation</capacity>
+               <offset>0.20</offset>
+            </li>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.50</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.30</offset>
+            </li>
+          </capMods>
+        </li>
+        <li>
+          <minSeverity>0.90</minSeverity>
+          <label>overload</label>
+          <painFactor>0.5</painFactor>
+          <capMods>
+             <li>
+               <capacity>Manipulation</capacity>
+               <offset>0.35</offset>
+            </li>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.80</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-0.20</offset>
+            </li>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+  </HediffDef>
 
-    <ThoughtDef>
-        <defName>GreenbudPremiumWithdrawal</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>GreenbudPremiumAddiction</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-        <li>
-            <visible>false</visible>
-        </li>
-        <li>
-            <label>greenbud withdrawal</label>
-            <description>I really wish I could smoke. No... only the best one....</description>
-            <baseMoodEffect>-28</baseMoodEffect>
-        </li>
-        </stages>
-    </ThoughtDef>
-    
+  <ThoughtDef>
+    <defName>BrainstemHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BrainstemHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>recovered from brainstem</label>
+        <description>I am not feeling well...</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>crashed from brainstem</label>
+        <description>The world slowed down too much…</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+      <li>
+        <label>high on brainstem</label>
+        <description>I can hear it.</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+      <li>
+        <label>overload on brainstem</label>
+        <description>I can hear the void. And it makes sense.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <!-- Brainstem addiction -->
+
+  <ChemicalDef>
+    <defName>Brainstem</defName>
+    <label>brainstem</label>
+    <addictionHediff>BrainstemAddiction</addictionHediff>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_Brainstem</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>brainstem</label>
+    <description>Because of a brainstem addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <fallPerDay>0.333</fallPerDay>
+    <listPriority>45</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>BrainstemAddiction</defName>
+    <label>brainstem addiction</label>
+    <description>A chemical addiction to brainstem. Long-term presence of brainstem has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of brainstem, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>Chemical_Brainstem</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.045</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+        <painFactor>3</painFactor>
+        <hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+        <statOffsets>
+          <RestFallRateFactor>0.3</RestFallRateFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.20</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.45</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Binging_DrugExtreme</mentalState>
+            <mtbDays>40</mtbDays>
+          </li>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>10</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>BrainstemWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BrainstemAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>brainstem withdrawal</label>
+        <description>I need that lightning powder again… everything feels dull.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>BrainstemTolerance</defName>
+    <label>brainstem tolerance</label>
+    <description>A built-up tolerance to brainstem. The more severe this tolerance is, the more brainstem it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>Brainstem</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageModerate</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.45, 99999)</li>
+            <li>(0.5, 120)</li>
+            <li>(1, 90)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect>
+          <li>Brain</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+
 </Defs>
